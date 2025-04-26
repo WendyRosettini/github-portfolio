@@ -1,318 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wendy Rosettini | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #00b7ff;
-      --primary-dark: #021a2e;
-      --primary-light: #7fd7ff;
-      --background: #0d1724;
-      --card-bg: #121c2c;
-      --text-main: #eaf6ff;
-      --accent: #c0ecff;
+      --primary: #185adb;
+      --primary-light: #41c9e2;
+      --background: #f8fafc;
+      --card-bg: #fff;
+      --card-shadow: 0 4px 32px #185adb18, 0 2px 8px #b3b3b312;
+      --text-main: #1b2533;
+      --accent: #41c9e2;
+      --navbar-bg: #eaf1faee;
     }
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0d1724 70%, #15253b 100%);
+      background: linear-gradient(135deg, #eaf6ff 60%, #c9e6fd 100%);
       color: var(--text-main);
-      font-family: 'Poppins', 'Fira Mono', monospace, sans-serif;
+      font-family: 'Inter', 'Poppins', Arial, sans-serif;
       min-height: 100vh;
-      display: flex;
+      transition: background 0.3s;
     }
-    .sidebar {
+    header {
+      background: var(--navbar-bg);
+      padding: 1.2rem 2vw 0.7rem 2vw;
+      box-shadow: 0 3px 16px #185adb10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 9;
+    }
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      user-select: none;
+    }
+    .nav-list {
+      display: flex;
+      gap: 2.1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-btn {
+      background: none; border: none;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 1.08rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: color 0.17s, background 0.19s;
+    }
+    .nav-btn.active, .nav-btn:hover {
+      color: #fff;
+      background: var(--primary);
+    }
+    .container {
+      max-width: 1000px;
+      margin: 3vw auto;
+      padding: 2vw;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2vw;
+    }
+    .profile-card {
+      flex: 1 1 320px;
+      max-width: 350px;
       background: var(--card-bg);
-      width: 260px;
-      min-width: 220px;
-      padding: 2.5rem 1rem 2rem 1rem;
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      padding: 2.5rem 2rem 2rem 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-right: 2.5px solid var(--primary);
-      box-shadow: 4px 0 16px #00b7ff24;
+      animation: fadeIn 1.1s;
+      margin-bottom: 2vw;
+      min-width: 280px;
     }
-    .avatar-box img {
-      width: 96px; height: 96px;
+    .avatar-pro {
+      width: 128px; height: 128px;
       border-radius: 50%;
-      border: 3px solid var(--primary);
-      margin-bottom: 1.2rem;
-      box-shadow: 0 0 18px #00b7ff50;
-      background: #1d2231;
+      border: 3px solid var(--primary-light);
+      box-shadow: 0 0 24px #41c9e230;
+      margin-bottom: 1.4rem;
       object-fit: cover;
+      transition: box-shadow 0.2s;
     }
-    .name {
+    .profile-card:hover .avatar-pro {
+      box-shadow: 0 0 40px #185adb33;
+    }
+    .name-main {
       color: var(--primary);
       font-size: 1.5rem;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      margin-bottom: 0.3rem;
-      text-align: center;
-      letter-spacing: 0.5px;
-    }
-    .title {
-      font-size: 1.01rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
+      margin-bottom: 0.35rem;
       text-align: center;
     }
-    .contacts-list {
-      margin: 1.5rem 0;
-      padding: 0;
-      list-style: none;
-      width: 100%;
-    }
-    .contact-item {
-      margin-bottom: 0.85rem;
-      display: flex; align-items: center; gap: 0.5rem;
-      font-size: 0.97rem;
-    }
-    .contact-link, .contact-title {
+    .role-main {
+      font-size: 1.04rem;
       color: var(--primary-light);
-      text-decoration: none;
+      text-align: center;
+      margin-bottom: 1.1rem;
     }
-    .contact-link:hover { color: var(--primary); text-decoration: underline; }
-    .social-list {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
+    .profile-contact {
+      font-size: 0.99rem;
+      margin-bottom: 0.8rem;
+      color: #6a798b;
+      text-align: center;
+    }
+    .profile-links {
+      display: flex; gap: 1rem; margin-top: 0.7rem;
       justify-content: center;
-      padding: 0;
     }
-    .social-item a {
+    .profile-links a {
       color: var(--primary);
-      font-size: 1.4rem;
-      transition: color 0.18s;
+      font-size: 1.45rem;
+      text-decoration: none;
+      transition: color 0.17s;
     }
-    .social-item a:hover { color: var(--primary-light);}
-    .main-content {
-      flex: 1;
-      padding: 2.2rem 2.5vw;
-      background: transparent;
+    .profile-links a:hover { color: var(--primary-light);}
+    main {
+      flex: 2 1 500px;
+      min-width: 320px;
+      margin-left: 1vw;
     }
-    .navbar-list {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 2.5rem;
-      padding: 0;
-      border-bottom: 1.5px solid var(--primary-dark);
-    }
-    .navbar-link {
-      background: none; border: none;
-      color: var(--primary-light);
-      font-size: 1.1rem;
-      font-family: inherit;
-      font-weight: 600;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      border-radius: 8px 8px 0 0;
-      margin-bottom: -2px;
-      transition: background 0.17s, color 0.17s;
-    }
-    .navbar-link.active, .navbar-link:hover {
-      background: var(--primary-dark);
-      color: #fff;
-      border-bottom: 2px solid var(--primary);
-    }
-    .article-title {
-      color: var(--primary-light);
-      font-size: 2rem;
-      margin-bottom: 0.7rem;
-      letter-spacing: 1.5px;
-    }
-    .about-text, .resume-section, .projects-section, .contact-section {
+    .card {
       background: var(--card-bg);
-      padding: 1.4rem 1.3rem;
-      border-radius: 11px;
-      box-shadow: 0 2px 18px #00b7ff20;
-      margin-bottom: 2rem;
-      color: var(--text-main);
-      font-size: 1.1rem;
+      border-radius: 18px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 2.2rem;
+      padding: 2.2rem 2rem 2rem 2rem;
+      animation: fadeInUp 1.4s;
+      opacity: 1;
+      transition: box-shadow 0.18s;
     }
-    .skills-list {
-      display: flex; flex-wrap: wrap; gap: 0.7rem;
-      list-style: none; padding: 0;
+    .card h2 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+    .card ul, .skills-list, .project-list {
+      list-style: none;
+      padding: 0;
       margin: 1rem 0 0 0;
     }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
     .skills-item {
-      background: #13355a;
-      color: var(--primary-light);
-      padding: 0.62rem 1.2rem;
+      background: #eaf6ff;
+      color: var(--primary);
+      padding: 0.57rem 1.1rem;
       border-radius: 999px;
       font-weight: 600;
-      border: 1px solid #1bbcff80;
-      box-shadow: 0 0 4px #0094cc50;
-      font-size: 1.03rem;
+      font-size: 1.02rem;
+      border: 1px solid #185adb1f;
+      box-shadow: 0 1px 8px #185adb0c;
     }
-    .project-list {
-      display: flex; flex-direction: column; gap: 1.3rem;
-      list-style: none; padding: 0;
+    .project-list .project-item {
+      background: #f5faff;
+      color: var(--text-main);
+      border-radius: 12px;
+      margin-bottom: 1.4rem;
+      padding: 1.2rem 1.2rem;
+      box-shadow: 0 2px 8px #185adb1a;
+      border-left: 5px solid var(--primary);
+      transition: border-color 0.17s;
     }
-    .project-item {
-      background: #192d42;
-      color: var(--primary);
-      border-radius: 10px;
-      box-shadow: 0 0 12px #00b7ff33;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1rem;
-      border: 1px solid #00b7ff2a;
-    }
+    .project-item:hover { border-left: 5px solid var(--primary-light);}
     .project-title {
-      margin: 0.5rem 0 0.3rem 0;
-      color: var(--primary-light);
-      font-size: 1.07rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.08rem;
+      margin-bottom: 0.2rem;
     }
-    .project-link { color: var(--primary); }
-    .project-link:hover { color: #fff; }
-    @media (max-width: 900px) {
-      body { flex-direction: column; }
-      .sidebar { width: 100%; min-width: 0; flex-direction: row; justify-content: center;}
-      .main-content { padding: 2vw; }
-      .navbar-list { flex-wrap: wrap; gap: 1rem;}
-      .article-title { font-size: 1.4rem;}
+    .project-link {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.01rem;
+      text-decoration: underline dotted 1px;
+      transition: color 0.16s;
+    }
+    .project-link:hover { color: var(--primary);}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.94);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(45px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 800px) {
+      .container { flex-direction: column; align-items: center;}
+      .profile-card, main { max-width: 97vw; }
+      .profile-card { margin-bottom: 2.2rem;}
+      .container { gap: 1vw;}
+      .card { padding: 1.1rem 1vw;}
     }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="avatar-box">
-  <img src="photo_badge_1.jpg" alt="Wendy Rosettini">
-</div>
-    <div class="name">Wendy Rosettini</div>
-    <div class="title">Cybersecurity Engineer & Student</div>
-    <ul class="contacts-list">
-      <li class="contact-item"><span class="contact-title"><i class="bi bi-envelope"></i> Email:</span>
-        <a href="mailto:wendy.rosettini@gmail.com" class="contact-link">wendy.rosettini@gmail.com</a>
-      </li>
-      <li class="contact-item"><span class="contact-title"><i class="bi bi-geo-alt"></i> Location:</span>
-        <span>Rome, Italy</span>
-      </li>
-      <li class="contact-item"><span class="contact-title"><i class="bi bi-linkedin"></i> LinkedIn:</span>
-        <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" class="contact-link" target="_blank">linkedin.com/in/wendy-rosettini-9130a3289</a>
-      </li>
-      <li class="contact-item"><span class="contact-title"><i class="bi bi-github"></i> GitHub:</span>
-        <a href="https://github.com/wendytrilly00w" class="contact-link" target="_blank">github.com/wendytrilly00w</a>
-      </li>
+  <header>
+    <div class="logo">Wendy Rosettini</div>
+    <ul class="nav-list">
+      <li><button class="nav-btn active" onclick="showTab('about')">About</button></li>
+      <li><button class="nav-btn" onclick="showTab('resume')">Resume</button></li>
+      <li><button class="nav-btn" onclick="showTab('projects')">Projects</button></li>
+      <li><button class="nav-btn" onclick="showTab('contact')">Contact</button></li>
     </ul>
-    <ul class="social-list">
-      <li class="social-item"><a href="https://github.com/wendytrilly00w" target="_blank"><i class="bi bi-github"></i></a></li>
-      <li class="social-item"><a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-    </ul>
-  </aside>
-  <main class="main-content">
-    <ul class="navbar-list">
-      <li><button class="navbar-link active" onclick="showTab('about')">About</button></li>
-      <li><button class="navbar-link" onclick="showTab('resume')">Resume</button></li>
-      <li><button class="navbar-link" onclick="showTab('projects')">Projects</button></li>
-      <li><button class="navbar-link" onclick="showTab('contact')">Contact</button></li>
-    </ul>
-    <section id="about" class="about-text tab-section">
-      <h2 class="article-title">About Me</h2>
-      <p>
-        Hi, I'm Wendy — a Computer Engineer and Cybersecurity student at Sapienza University in Rome.<br>
-        I'm passionate about <b>penetration testing</b>, hacking, open source, and building things that make a difference in cyber defense.<br>
-        My journey began at the University of L'Aquila, where I graduated in Computer Engineering with a thesis on automotive security and cryptography. Now, I focus on advanced topics in cybersecurity, from hands-on pentesting and malware analysis to network defense and secure system design.<br>
-        Driven by curiosity, I enjoy diving into new vulnerabilities, CTFs, and security research. <br>
-      </p>
-      <h3>What I'm doing</h3>
-      <ul>
-        <li>🔹 MSc in Cybersecurity at Sapienza University of Rome</li>
-        <li>🔹 Developing AI-driven frameworks for automated penetration testing</li>
-        <li>🔹 Hands-on pentesting on custom virtual machines and real-life scenarios</li>
-        <li>🔹 Exploring the latest in network security, SIEM/IDS, and open source tools</li>
-      </ul>
+  </header>
+  <div class="container">
+    <section class="profile-card">
+      <img src="photo_badge_1.jpg" class="avatar-pro" alt="Wendy Rosettini">
+      <div class="name-main">Wendy Rosettini</div>
+      <div class="role-main">Cybersecurity Engineer & Student</div>
+      <div class="profile-contact"><i class="bi bi-geo-alt"></i> Rome, Italy<br>
+        <i class="bi bi-envelope"></i> <a href="mailto:wendy.rosettini@gmail.com" style="color:inherit;">wendy.rosettini@gmail.com</a>
+      </div>
+      <div class="profile-links">
+        <a href="https://github.com/wendytrilly00w" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
     </section>
-    <section id="resume" class="resume-section tab-section" style="display:none;">
-      <h2 class="article-title">Resume</h2>
-      <h3>Education</h3>
-      <ul>
-        <li>
-          <b>Sapienza University of Rome</b><br>
-          MSc in Computer Engineering – Cybersecurity (in progress)
-        </li>
-        <li>
-          <b>Università degli Studi dell'Aquila</b><br>
-          BSc in Computer Engineering – Thesis: Automotive Security and Cryptography
-        </li>
-      </ul>
-      <h3>Skills</h3>
-      <ul class="skills-list">
-        <li class="skills-item">Penetration Testing</li>
-        <li class="skills-item">Malware Analysis</li>
-        <li class="skills-item">Python</li>
-        <li class="skills-item">Linux</li>
-        <li class="skills-item">Bash</li>
-        <li class="skills-item">JavaScript</li>
-        <li class="skills-item">Git</li>
-        <li class="skills-item">Risk Management</li>
-        <li class="skills-item">Network Security</li>
-        <li class="skills-item">AI/ML for Security</li>
-        <li class="skills-item">CTF/Red Teaming</li>
-      </ul>
-      <h3>Languages</h3>
-      <ul>
-        <li><b>Italian:</b> Native</li>
-        <li><b>English:</b> Fluent</li>
-      </ul>
-    </section>
-    <section id="projects" class="projects-section tab-section" style="display:none;">
-      <h2 class="article-title">Projects</h2>
-      <ul class="project-list">
-        <li class="project-item">
-          <div class="project-title"><b>Vehicle Security: HSM-based Cryptographic Schemes</b> <span style="font-size:0.95em;">(2023)</span></div>
-          <div>
-            Study, development, and experimental implementation of cryptographic schemes for vehicle security, focusing on Hardware Security Modules (HSM) and Trusted Platform Modules (TPM).  
-            The thesis analyzes automotive system vulnerabilities and tests protocols such as AES and elliptic curve-based ECTAKS on ESP32 microcontrollers, evaluating the effectiveness of these cryptosystems for secure in-vehicle communication.<br>
-            <a href="https://drive.google.com/file/d/1oZJRywM75ihs5xgnwREWP5k1kdHpqao6/view?usp=sharing" target="_blank" class="project-link">Read the Thesis</a>
-          </div>
-        </li>
-        <li class="project-item">
-          <div class="project-title"><b>FoodRescue Web Application</b> <span style="font-size:0.95em;">(2021–2022)</span></div>
-          <div>
-            Collaborated on the design and development (frontend/backend) of a dynamic website to reduce food waste, using HTML, CSS, JavaScript, and PHP.  
-            <a href="https://foodrescue.altervista.org/foodrescue/" target="_blank" class="project-link">View Project</a>
-          </div>
-        </li>
-        <li class="project-item">
-          <div class="project-title"><b>Custom Penetration Testing Virtual Machine</b> <span style="font-size:0.95em;">(2024)</span></div>
-          <div>
-            Developed, together with a colleague, a penetration testing VM with three privilege escalation levels and three different local access levels, implementing attack vectors like SQL injection, cookie stealing, and file upload vulnerabilities. Simulated realistic exploitation scenarios and used various pentesting tools.<br>
-            <a href="https://drive.google.com/file/d/1IUo7KfHntAANG9wObcx0sIHjdGM0Lb32/view?usp=sharing" target="_blank" class="project-link">VM Documentation 1</a> |
-            <a href="https://drive.google.com/file/d/1T5A-cu5uWGLb_VUzgbMPETPmF-R5ZNY9/view?usp=sharing" target="_blank" class="project-link">VM Documentation 2</a>
-          </div>
-        </li>
-        <li class="project-item">
-          <div class="project-title"><b>Firewall Rules & Network Security Automation</b> <span style="font-size:0.95em;">(2024)</span></div>
-          <div>
-            Configured advanced firewall rules on OPNsense in a Proxmox environment. Set up Security Information and Event Management (SIEM), Intrusion Detection System (IDS), and multiple network defense mechanisms to actively monitor and protect networks from threats and vulnerabilities.<br>
-            <a href="https://drive.google.com/file/d/1Z9u5VkLngfSm38Ffp-lXbxRp-n9ZnfJe/view?usp=sharing" target="_blank" class="project-link">Network Security Project 1</a> |
-            <a href="https://drive.google.com/file/d/1Yvj6wgt0y2-RcKlszrbEM7G5Yn-iNNjN/view?usp=sharing" target="_blank" class="project-link">Project 2</a> |
-            <a href="https://drive.google.com/file/d/1XvDNJWwzoerfgTzYYsTdWBln7WZE1nU2/view?usp=sharing" target="_blank" class="project-link">Project 3</a>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <section id="contact" class="contact-section tab-section" style="display:none;">
-      <h2 class="article-title">Contact</h2>
-      <p><b>Email:</b> <a href="mailto:wendy.rosettini@gmail.com">wendy.rosettini@gmail.com</a></p>
-      <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank">linkedin.com/in/wendy-rosettini-9130a3289</a></p>
-      <p><b>GitHub:</b> <a href="https://github.com/wendytrilly00w" target="_blank">github.com/wendytrilly00w</a></p>
-    </section>
-  </main>
+    <main>
+      <section id="about" class="card tab-section">
+        <h2>About Me</h2>
+        <p>
+          Hi, I'm Wendy — a Computer Engineer and Cybersecurity student at Sapienza University in Rome.<br>
+          I'm passionate about <b>penetration testing</b>, hacking, open source, and building things that make a difference in cyber defense.<br>
+          My journey began at the University of L'Aquila, where I graduated in Computer Engineering with a thesis on automotive security and cryptography. Now, I focus on advanced topics in cybersecurity, from hands-on pentesting and malware analysis to network defense and secure system design.<br>
+          Driven by curiosity and a hacker mindset, I enjoy diving into new vulnerabilities, CTFs, and security research.<br>
+          <b>Let's secure the future together!</b>
+        </p>
+      </section>
+      <section id="resume" class="card tab-section" style="display:none;">
+        <h2>Resume</h2>
+        <h3>Education</h3>
+        <ul>
+          <li>
+            <b>Sapienza University of Rome</b><br>
+            MSc in Computer Engineering – Cybersecurity (in progress)
+          </li>
+          <li>
+            <b>Università degli Studi dell'Aquila</b><br>
+            BSc in Computer Engineering – Thesis: Automotive Security and Cryptography
+          </li>
+        </ul>
+        <h3>Skills</h3>
+        <ul class="skills-list">
+          <li class="skills-item">Penetration Testing</li>
+          <li class="skills-item">Malware Analysis</li>
+          <li class="skills-item">Python</li>
+          <li class="skills-item">Linux</li>
+          <li class="skills-item">Bash</li>
+          <li class="skills-item">JavaScript</li>
+          <li class="skills-item">Git</li>
+          <li class="skills-item">Risk Management</li>
+          <li class="skills-item">Network Security</li>
+          <li class="skills-item">AI/ML for Security</li>
+          <li class="skills-item">CTF/Red Teaming</li>
+        </ul>
+        <h3>Languages</h3>
+        <ul>
+          <li><b>Italian:</b> Native</li>
+          <li><b>English:</b> Fluent</li>
+        </ul>
+      </section>
+      <section id="projects" class="card tab-section" style="display:none;">
+        <h2>Projects</h2>
+        <ul class="project-list">
+          <li class="project-item">
+            <div class="project-title">Vehicle Security: HSM-based Cryptographic Schemes <span style="font-size:0.93em;">(2023)</span></div>
+            <div>
+              Study, development, and experimental implementation of cryptographic schemes for vehicle security, focusing on Hardware Security Modules (HSM) and Trusted Platform Modules (TPM).
+              The thesis analyzes automotive system vulnerabilities and tests protocols such as AES and elliptic curve-based ECTAKS on ESP32 microcontrollers, evaluating the effectiveness of these cryptosystems for secure in-vehicle communication.<br>
+              <a href="https://drive.google.com/file/d/1oZJRywM75ihs5xgnwREWP5k1kdHpqao6/view?usp=sharing" target="_blank" class="project-link">Read the Thesis</a>
+            </div>
+          </li>
+          <li class="project-item">
+            <div class="project-title">FoodRescue Web Application <span style="font-size:0.93em;">(2021–2022)</span></div>
+            <div>
+              Collaborated on the design and development (frontend/backend) of a dynamic website to reduce food waste, using HTML, CSS, JavaScript, and PHP.<br>
+              <a href="https://foodrescue.altervista.org/foodrescue/" target="_blank" class="project-link">View Project</a>
+            </div>
+          </li>
+          <li class="project-item">
+            <div class="project-title">Custom Penetration Testing Virtual Machine <span style="font-size:0.93em;">(2024)</span></div>
+            <div>
+              Developed, together with a colleague, a penetration testing VM with three privilege escalation levels and three different local access levels, implementing attack vectors like SQL injection, cookie stealing, and file upload vulnerabilities. Simulated realistic exploitation scenarios and used various pentesting tools.<br>
+              <a href="https://drive.google.com/file/d/1IUo7KfHntAANG9wObcx0sIHjdGM0Lb32/view?usp=sharing" target="_blank" class="project-link">VM Documentation 1</a> |
+              <a href="https://drive.google.com/file/d/1T5A-cu5uWGLb_VUzgbMPETPmF-R5ZNY9/view?usp=sharing" target="_blank" class="project-link">VM Documentation 2</a>
+            </div>
+          </li>
+          <li class="project-item">
+            <div class="project-title">Firewall Rules & Network Security Automation <span style="font-size:0.93em;">(2024)</span></div>
+            <div>
+              Configured advanced firewall rules on OPNsense in a Proxmox environment. Set up Security Information and Event Management (SIEM), Intrusion Detection System (IDS), and multiple network defense mechanisms to actively monitor and protect networks from threats and vulnerabilities.<br>
+              <a href="https://drive.google.com/file/d/1Z9u5VkLngfSm38Ffp-lXbxRp-n9ZnfJe/view?usp=sharing" target="_blank" class="project-link">Network Security Project 1</a> |
+              <a href="https://drive.google.com/file/d/1Yvj6wgt0y2-RcKlszrbEM7G5Yn-iNNjN/view?usp=sharing" target="_blank" class="project-link">Project 2</a> |
+              <a href="https://drive.google.com/file/d/1XvDNJWwzoerfgTzYYsTdWBln7WZE1nU2/view?usp=sharing" target="_blank" class="project-link">Project 3</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section id="contact" class="card tab-section" style="display:none;">
+        <h2>Contact</h2>
+        <p><b>Email:</b> <a href="mailto:wendy.rosettini@gmail.com">wendy.rosettini@gmail.com</a></p>
+        <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank">linkedin.com/in/wendy-rosettini-9130a3289</a></p>
+        <p><b>GitHub:</b> <a href="https://github.com/wendytrilly00w" target="_blank">github.com/wendytrilly00w</a></p>
+      </section>
+    </main>
+  </div>
   <script>
     function showTab(tab) {
       const tabs = document.querySelectorAll('.tab-section');
       tabs.forEach(el => el.style.display = 'none');
       document.getElementById(tab).style.display = '';
-      document.querySelectorAll('.navbar-link').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
       const idx = ['about','resume','projects','contact'].indexOf(tab);
-      document.querySelectorAll('.navbar-link')[idx].classList.add('active');
+      document.querySelectorAll('.nav-btn')[idx].classList.add('active');
     }
+    // Set default tab
+    showTab('about');
   </script>
 </body>
 </html>
+
