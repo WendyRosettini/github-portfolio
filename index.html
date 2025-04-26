@@ -149,7 +149,7 @@
       font-size: 1.03rem;
     }
     .project-list {
-      display: flex; flex-wrap: wrap; gap: 1.3rem;
+      display: flex; flex-direction: column; gap: 1.3rem;
       list-style: none; padding: 0;
     }
     .project-item {
@@ -158,8 +158,6 @@
       border-radius: 10px;
       box-shadow: 0 0 12px #00b7ff33;
       padding: 1rem 1.2rem;
-      min-width: 220px; max-width: 280px;
-      flex: 1 1 220px;
       margin-bottom: 1rem;
       border: 1px solid #00b7ff2a;
     }
@@ -189,13 +187,13 @@
     <div class="title">Cybersecurity Engineer & Student</div>
     <ul class="contacts-list">
       <li class="contact-item"><span class="contact-title"><i class="bi bi-envelope"></i> Email:</span>
-        <a href="mailto:your.email@uniroma1.it" class="contact-link">your.email@uniroma1.it</a>
+        <a href="mailto:wendy.rosettini@gmail.com" class="contact-link">wendy.rosettini@gmail.com</a>
       </li>
       <li class="contact-item"><span class="contact-title"><i class="bi bi-geo-alt"></i> Location:</span>
         <span>Rome, Italy</span>
       </li>
       <li class="contact-item"><span class="contact-title"><i class="bi bi-linkedin"></i> LinkedIn:</span>
-        <a href="https://linkedin.com/in/YOUR-USERNAME" class="contact-link" target="_blank">linkedin.com/in/YOUR-USERNAME</a>
+        <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" class="contact-link" target="_blank">linkedin.com/in/wendy-rosettini-9130a3289</a>
       </li>
       <li class="contact-item"><span class="contact-title"><i class="bi bi-github"></i> GitHub:</span>
         <a href="https://github.com/wendytrilly00w" class="contact-link" target="_blank">github.com/wendytrilly00w</a>
@@ -203,7 +201,7 @@
     </ul>
     <ul class="social-list">
       <li class="social-item"><a href="https://github.com/wendytrilly00w" target="_blank"><i class="bi bi-github"></i></a></li>
-      <li class="social-item"><a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+      <li class="social-item"><a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
     </ul>
   </aside>
   <main class="main-content">
@@ -218,15 +216,16 @@
       <p>
         Hi, I'm Wendy — a Computer Engineer and Cybersecurity student at Sapienza University in Rome.<br>
         I'm passionate about <b>penetration testing</b>, hacking, open source, and building things that make a difference in cyber defense.<br>
-       
+        My journey began at the University of L'Aquila, where I graduated in Computer Engineering with a thesis on automotive security and cryptography. Now, I focus on advanced topics in cybersecurity, from hands-on pentesting and malware analysis to network defense and secure system design.<br>
+        Driven by curiosity and a hacker mindset, I enjoy diving into new vulnerabilities, CTFs, and security research. My goal is to make technology safer — one exploit at a time.<br>
+        I believe in the power of curiosity and collaboration — let's secure the future together!
       </p>
-      
       <h3>What I'm doing</h3>
       <ul>
-        <li>🔹</li>
-        <li>🔹 </li>
-        <li>🔹 </li>
-        <li>🔹</li>
+        <li>🔹 MSc in Cybersecurity at Sapienza University of Rome</li>
+        <li>🔹 Developing AI-driven frameworks for automated penetration testing</li>
+        <li>🔹 Hands-on pentesting on custom virtual machines and real-life scenarios</li>
+        <li>🔹 Exploring the latest in network security, SIEM/IDS, and open source tools</li>
       </ul>
     </section>
     <section id="resume" class="resume-section tab-section" style="display:none;">
@@ -234,54 +233,75 @@
       <h3>Education</h3>
       <ul>
         <li>
-          <b>UNiversità degl Studi dell'Aquila</b><br>
-          COmputer Engineer – 
-        </li>
-        <li>
           <b>Sapienza University of Rome</b><br>
           MSc in Computer Engineering – Cybersecurity (in progress)
         </li>
-    
+        <li>
+          <b>Università degli Studi dell'Aquila</b><br>
+          BSc in Computer Engineering – Thesis: Automotive Security and Cryptography
+        </li>
       </ul>
       <h3>Skills</h3>
       <ul class="skills-list">
+        <li class="skills-item">Penetration Testing</li>
+        <li class="skills-item">Malware Analysis</li>
         <li class="skills-item">Python</li>
-        <li class="skills-item">JavaScript</li>
         <li class="skills-item">Linux</li>
         <li class="skills-item">Bash</li>
-        <li class="skills-item">Pentesting</li>
-        <li class="skills-item">Malware Analysis</li>
-        <li class="skills-item">Risk Management</li>
+        <li class="skills-item">JavaScript</li>
         <li class="skills-item">Git</li>
+        <li class="skills-item">Risk Management</li>
+        <li class="skills-item">Network Security</li>
+        <li class="skills-item">AI/ML for Security</li>
+        <li class="skills-item">CTF/Red Teaming</li>
+      </ul>
+      <h3>Languages</h3>
+      <ul>
+        <li><b>Italian:</b> Native</li>
+        <li><b>English:</b> Fluent</li>
       </ul>
     </section>
     <section id="projects" class="projects-section tab-section" style="display:none;">
       <h2 class="article-title">Projects</h2>
       <ul class="project-list">
         <li class="project-item">
-          <div class="project-title"><b></b></div>
-          <div> .... <br>
-            <a href="https://github.com/wendytrilly00w/ai-pentest-framework" target="_blank" class="project-link">View on GitHub</a>
+          <div class="project-title"><b>Vehicle Security: HSM-based Cryptographic Schemes</b> <span style="font-size:0.95em;">(2023)</span></div>
+          <div>
+            Study, development, and experimental implementation of cryptographic schemes for vehicle security, focusing on Hardware Security Modules (HSM) and Trusted Platform Modules (TPM).  
+            The thesis analyzes automotive system vulnerabilities and tests protocols such as AES and elliptic curve-based ECTAKS on ESP32 microcontrollers, evaluating the effectiveness of these cryptosystems for secure in-vehicle communication.<br>
+            <a href="https://drive.google.com/file/d/1oZJRywM75ihs5xgnwREWP5k1kdHpqao6/view?usp=sharing" target="_blank" class="project-link">Read the Thesis</a>
           </div>
         </li>
         <li class="project-item">
-          <div class="project-title"><b></b></div>
-          <div><br>
-            <a href="https://github.com/wendytrilly00w/malware-analyzer" target="_blank" class="project-link">View on GitHub</a>
+          <div class="project-title"><b>FoodRescue Web Application</b> <span style="font-size:0.95em;">(2021–2022)</span></div>
+          <div>
+            Collaborated on the design and development (frontend/backend) of a dynamic website to reduce food waste, using HTML, CSS, JavaScript, and PHP.  
+            <a href="https://foodrescue.altervista.org/foodrescue/" target="_blank" class="project-link">View Project</a>
           </div>
         </li>
         <li class="project-item">
-          <div class="project-title"><b></b></div>
-          <div>..<br>
-            <a href="https://github.com/wendytrilly00w/network-recon-automator" target="_blank" class="project-link">View on GitHub</a>
+          <div class="project-title"><b>Custom Penetration Testing Virtual Machine</b> <span style="font-size:0.95em;">(2024)</span></div>
+          <div>
+            Developed, together with a colleague, a penetration testing VM with three privilege escalation levels and three different local access levels, implementing attack vectors like SQL injection, cookie stealing, and file upload vulnerabilities. Simulated realistic exploitation scenarios and used various pentesting tools.<br>
+            <a href="https://drive.google.com/file/d/1IUo7KfHntAANG9wObcx0sIHjdGM0Lb32/view?usp=sharing" target="_blank" class="project-link">VM Documentation 1</a> |
+            <a href="https://drive.google.com/file/d/1T5A-cu5uWGLb_VUzgbMPETPmF-R5ZNY9/view?usp=sharing" target="_blank" class="project-link">VM Documentation 2</a>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-title"><b>Firewall Rules & Network Security Automation</b> <span style="font-size:0.95em;">(2024)</span></div>
+          <div>
+            Configured advanced firewall rules on OPNsense in a Proxmox environment. Set up Security Information and Event Management (SIEM), Intrusion Detection System (IDS), and multiple network defense mechanisms to actively monitor and protect networks from threats and vulnerabilities.<br>
+            <a href="https://drive.google.com/file/d/1Z9u5VkLngfSm38Ffp-lXbxRp-n9ZnfJe/view?usp=sharing" target="_blank" class="project-link">Network Security Project 1</a> |
+            <a href="https://drive.google.com/file/d/1Yvj6wgt0y2-RcKlszrbEM7G5Yn-iNNjN/view?usp=sharing" target="_blank" class="project-link">Project 2</a> |
+            <a href="https://drive.google.com/file/d/1XvDNJWwzoerfgTzYYsTdWBln7WZE1nU2/view?usp=sharing" target="_blank" class="project-link">Project 3</a>
           </div>
         </li>
       </ul>
     </section>
     <section id="contact" class="contact-section tab-section" style="display:none;">
       <h2 class="article-title">Contact</h2>
-      <p><b>Email:</b> <a href="wendy.rosettini@gmail.com"></a></p>
-      <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank">linkedin.com/in/YOUR-USERNAME</a></p>
+      <p><b>Email:</b> <a href="mailto:wendy.rosettini@gmail.com">wendy.rosettini@gmail.com</a></p>
+      <p><b>LinkedIn:</b> <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank">linkedin.com/in/wendy-rosettini-9130a3289</a></p>
       <p><b>GitHub:</b> <a href="https://github.com/wendytrilly00w" target="_blank">github.com/wendytrilly00w</a></p>
     </section>
   </main>
