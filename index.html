@@ -1,112 +1,137 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wendy | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <title>Wendy Rosettini| Cybersecurity Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0; padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #1a2238, #283e51 80%);
-      color: #fff;
       min-height: 100vh;
+      font-family: 'Fira Mono', monospace;
+      background: #0a0f13;
+      color: #39ff14;
+      box-sizing: border-box;
+      letter-spacing: 0.5px;
+      transition: background 0.3s;
     }
     header {
       text-align: center;
-      padding: 3rem 1rem 1rem 1rem;
+      padding: 2.5rem 1rem 1rem 1rem;
     }
     .avatar {
-      width: 96px;
-      height: 96px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 3px solid #64ffda;
+      border: 3px solid #39ff14;
       margin-bottom: 1rem;
-      box-shadow: 0 2px 12px #222a;
+      box-shadow: 0 2px 24px #39ff1444;
+      background: #1a1a1a;
     }
     h1 {
       font-size: 2.5rem;
-      margin: 0.5rem 0 0.25rem 0;
-      font-family: 'Fira Mono', monospace;
-      color: #64ffda;
+      margin: 0.5rem 0 0.2rem 0;
+      color: #39ff14;
+      font-weight: 700;
       letter-spacing: -2px;
+      text-shadow: 0 0 4px #39ff1470;
+      transition: color 0.3s;
     }
     h2 {
       font-size: 1.3rem;
-      font-weight: 400;
-      color: #c2d3e1;
+      color: #ccc;
       margin: 0 0 2rem 0;
+      font-weight: 400;
     }
     .tabs {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin: 2rem 0 1rem 0;
+      gap: 1.2rem;
+      margin: 2.2rem 0 1rem 0;
     }
     .tab-btn {
-      background: #212c3a;
-      color: #64ffda;
+      background: #121717;
+      color: #39ff14;
       border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 20px 20px 0 0;
+      padding: 0.6rem 1.4rem;
+      border-radius: 13px 13px 0 0;
       font-family: 'Fira Mono', monospace;
       font-size: 1rem;
       cursor: pointer;
-      transition: background .2s, color .2s;
+      transition: background .18s, color .18s;
       outline: none;
-      border-bottom: 2px solid #64ffda55;
+      border-bottom: 2px solid #39ff1455;
+      box-shadow: 0 0 5px #39ff1420 inset;
     }
     .tab-btn.active {
-      background: #64ffda;
-      color: #222;
+      background: #39ff14;
+      color: #0a0f13;
       border-bottom: 2px solid #fff;
+      font-weight: bold;
+      box-shadow: 0 2px 18px #39ff1440;
     }
     .tab-content {
       max-width: 500px;
       margin: 0 auto;
-      background: #222b3a;
-      padding: 2rem;
-      border-radius: 0 0 16px 16px;
-      box-shadow: 0 2px 20px #0005;
-      min-height: 180px;
-      transition: all 0.4s;
+      background: #121717;
+      color: #39ff14;
+      padding: 2rem 1.4rem;
+      border-radius: 0 0 14px 14px;
+      min-height: 170px;
+      box-shadow: 0 2px 20px #0006, 0 0 18px #39ff1433 inset;
+      border-top: 2px solid #39ff1455;
+      font-size: 1.04rem;
+      transition: all 0.5s;
     }
     ul.skills, ul.projects {
       list-style: none;
       padding: 0;
-      margin: 1rem 0 0 0;
+      margin: 1.2rem 0 0 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.7rem;
     }
     ul.skills li {
-      background: #313e51;
-      color: #64ffda;
-      padding: 0.5rem 1rem;
+      background: #212c20;
+      color: #39ff14;
+      padding: 0.6rem 1.1rem;
       border-radius: 999px;
       font-size: 1rem;
-      font-family: 'Fira Mono', monospace;
+      box-shadow: 0 0 3px #39ff1422;
+      border: 1px solid #39ff1422;
     }
     ul.projects li {
-      background: #283848;
-      color: #fff;
+      background: #101c11;
+      color: #39ff14;
       padding: 0.7rem 1rem;
-      border-radius: 12px;
+      border-radius: 10px;
       margin-bottom: 0.5rem;
-      box-shadow: 0 1px 3px #0003;
+      box-shadow: 0 2px 9px #39ff1422;
+      border: 1px solid #39ff1440;
     }
     a {
-      color: #64ffda;
-      text-decoration: none;
+      color: #39ff14;
+      text-decoration: underline dashed 1px;
+      transition: color .15s;
     }
-    a:hover { text-decoration: underline; }
-    @media (max-width: 700px) {
-      .tab-content { padding: 1rem; }
-      .tabs { gap: 0.5rem; }
+    a:hover { color: #fff; text-decoration: underline; }
+    .cyber-effect {
+      animation: cyberGlow 2.3s infinite alternate;
+      filter: drop-shadow(0 0 6px #39ff1460);
+    }
+    @keyframes cyberGlow {
+      from { text-shadow: 0 0 8px #39ff1470;}
+      to   { text-shadow: 0 0 18px #39ff14;}
+    }
+    @media (max-width: 600px) {
+      .tab-content { padding: 1rem 0.6rem; font-size: 0.99rem;}
+      .tabs { gap: 0.4rem;}
+      h1 { font-size: 2rem;}
+      .avatar { width: 74px; height: 74px; }
     }
     .fade-in {
-      animation: fadeIn 0.6s;
+      animation: fadeIn 0.7s;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px);}
@@ -117,8 +142,8 @@
 <body>
   <header>
     <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="Wendy Avatar" />
-    <h1>Wendy</h1>
-    <h2>Security Engineer & AI Developer</h2>
+    <h1 class="cyber-effect">Wendy Trilly</h1>
+    <h2>Computer Engineer & Cybersecurity Student at Sapienza University</h2>
   </header>
   <nav class="tabs">
     <button class="tab-btn active" onclick="showTab(0)">About</button>
@@ -128,9 +153,12 @@
   </nav>
   <main>
     <section id="tab0" class="tab-content fade-in">
-      <p>Ciao! Sono Wendy, appassionata di sicurezza informatica, automazione e AI.<br>
-      Sviluppo tool per penetration testing, analisi malware e framework innovativi.<br>
-      Mi piace imparare tecnologie nuove e collaborare a progetti open source.</p>
+      <p>
+        👋 Hi! I'm Wendy, a passionate Computer Engineer specializing in <b>cybersecurity</b> and automation.<br>
+        Currently studying at <b>Sapienza University of Rome</b>.<br><br>
+        I love building <span class="cyber-effect">AI-driven security tools</span>, automating penetration testing, and analyzing malware.<br>
+        Always excited to learn new technologies, contribute to open source, and solve complex security challenges.
+      </p>
     </section>
     <section id="tab1" class="tab-content" style="display:none;">
       <strong>Tech Stack:</strong>
@@ -139,34 +167,39 @@
         <li>JavaScript</li>
         <li>React</li>
         <li>Linux</li>
-        <li>AI/ML</li>
+        <li>AI / ML</li>
         <li>Pentesting</li>
         <li>Git</li>
+        <li>Bash</li>
       </ul>
     </section>
     <section id="tab2" class="tab-content" style="display:none;">
       <ul class="projects">
         <li>
-          <b>AI Pentest Framework</b> <br>
-          <small>Automated penetration testing con LLM, orchestrazione agenti, analisi reti.</small><br>
-          <a href="https://github.com/TUO-USERNAME/ai-pentest-framework" target="_blank">Vedi su GitHub</a>
+          <b>AI Pentest Framework</b><br>
+          <small>Automated penetration testing using LLMs and agent orchestration.</small><br>
+          <a href="https://github.com/wendytrilly00w/ai-pentest-framework" target="_blank">View on GitHub</a>
         </li>
         <li>
-          <b>Malware Analyzer</b> <br>
-          <small>Tool Python per analisi statica/dinamica di malware Windows.</small><br>
-          <a href="https://github.com/TUO-USERNAME/malware-analyzer" target="_blank">Vedi su GitHub</a>
+          <b>Malware Analyzer</b><br>
+          <small>Python tool for static and dynamic malware analysis on Windows.</small><br>
+          <a href="https://github.com/wendytrilly00w/malware-analyzer" target="_blank">View on GitHub</a>
         </li>
-        <!-- Aggiungi altri progetti -->
+        <li>
+          <b>Network Recon Automator</b><br>
+          <small>Fast, scriptable reconnaissance toolkit for hackers and researchers.</small><br>
+          <a href="https://github.com/wendytrilly00w/network-recon-automator" target="_blank">View on GitHub</a>
+        </li>
+        <!-- Add more projects as you wish -->
       </ul>
     </section>
     <section id="tab3" class="tab-content" style="display:none;">
-      <p>📫 <b>Email:</b> <a href="mailto:tuo@email.com">tuo@email.com</a></p>
-      <p>🐙 <b>GitHub:</b> <a href="https://github.com/TUO-USERNAME" target="_blank">github.com/TUO-USERNAME</a></p>
-      <p>💼 <b>LinkedIn:</b> <a href="https://linkedin.com/in/TUO-USERNAME" target="_blank">linkedin.com/in/TUO-USERNAME</a></p>
+      <p>📫 <b>Email:</b> <a href="mailto:your.email@uniroma1.it">your.email@uniroma1.it</a></p>
+      <p>🐙 <b>GitHub:</b> <a href="https://github.com/wendytrilly00w" target="_blank">github.com/wendytrilly00w</a></p>
+      <p>💼 <b>LinkedIn:</b> <a href="https://linkedin.com/in/YOUR-USERNAME" target="_blank">linkedin.com/in/YOUR-USERNAME</a></p>
     </section>
   </main>
   <script>
-    let currentTab = 0;
     function showTab(n) {
       for (let i = 0; i < 4; i++) {
         document.getElementById('tab'+i).style.display = 'none';
@@ -175,7 +208,6 @@
       document.getElementById('tab'+n).style.display = 'block';
       document.getElementById('tab'+n).classList.add('fade-in');
       document.getElementsByClassName('tab-btn')[n].classList.add('active');
-      currentTab = n;
     }
   </script>
 </body>
