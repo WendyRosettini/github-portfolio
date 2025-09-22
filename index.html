@@ -181,18 +181,18 @@
     }
 
     .hero-photo {
-      animation: slideInLeft 1s ease-out 0.3s both;
-      grid-column: 1;
-      grid-row: 2;
+      animation: slideInRight 1s ease-out;
+      grid-column: 2;
+      grid-row: 1;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .hero-skills {
-      animation: slideInRight 1s ease-out;
-      grid-column: 2;
-      grid-row: 1;
+      animation: slideInLeft 1s ease-out 0.3s both;
+      grid-column: 1;
+      grid-row: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1033,7 +1033,12 @@
         </div>
       </div>
       
-      <!-- Top Right: Competenze -->
+      <!-- Top Right: Foto -->
+      <div class="hero-photo">
+        <img src="photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
+      </div>
+
+      <!-- Bottom Left: Competenze -->
       <div class="hero-skills">
         <div class="hexagon-grid">
           <div class="hex-item">
@@ -1061,11 +1066,6 @@
             <span class="hex-label">Cryptography</span>
           </div>
         </div>
-      </div>
-
-      <!-- Bottom Left: Foto -->
-      <div class="hero-photo">
-        <img src="photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
       </div>
       
       <!-- Bottom Right: Terminale -->
