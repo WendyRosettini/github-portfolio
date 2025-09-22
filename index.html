@@ -308,6 +308,120 @@
       margin-bottom: 2rem;
     }
 
+    /* Interactive Terminal */
+    .terminal-container {
+      background: rgba(10, 14, 39, 0.95);
+      border: 2px solid var(--accent-primary);
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-glow);
+      margin: 2rem 0;
+      overflow: hidden;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .terminal-header-bar {
+      background: rgba(0, 212, 255, 0.1);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--accent-primary);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27ca3f; }
+
+    .terminal-title {
+      color: var(--text-secondary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      margin-left: auto;
+    }
+
+    .terminal-body {
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      min-height: 300px;
+      background: rgba(10, 14, 39, 1);
+    }
+
+    .terminal-line {
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: terminalType 0.5s ease-out forwards;
+    }
+
+    .terminal-prompt {
+      color: var(--accent-success);
+    }
+
+    .terminal-command {
+      color: var(--accent-primary);
+    }
+
+    .terminal-output {
+      color: var(--text-secondary);
+      margin-left: 0;
+    }
+
+    .terminal-cursor {
+      background: var(--accent-primary);
+      animation: terminalBlink 1s infinite;
+      display: inline-block;
+      width: 8px;
+      height: 18px;
+    }
+
+    @keyframes terminalType {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes terminalBlink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    .terminal-interactive {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .terminal-button {
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid var(--accent-primary);
+      color: var(--accent-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .terminal-button:hover {
+      background: rgba(0, 212, 255, 0.2);
+      transform: scale(1.05);
+    }
+
     /* Security Animation */
     .security-visual {
       position: relative;
@@ -814,6 +928,11 @@
       .hex-label {
         font-size: 0.7rem;
       }
+
+      .terminal-container {
+        max-width: 100%;
+        margin: 1rem;
+      }
     }
 
     /* Animations */
@@ -890,6 +1009,66 @@
         <div class="photo-container">
           <img src="photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
         </div>
+        
+        <!-- Interactive Terminal -->
+        <div class="terminal-container">
+          <div class="terminal-header-bar">
+            <div class="terminal-dots">
+              <div class="terminal-dot dot-red"></div>
+              <div class="terminal-dot dot-yellow"></div>
+              <div class="terminal-dot dot-green"></div>
+            </div>
+            <div class="terminal-title">wendy@cybersec:~$</div>
+          </div>
+          <div class="terminal-body" id="terminal">
+            <div class="terminal-line" style="animation-delay: 0.5s;">
+              <span class="terminal-prompt">wendy@cybersec:~$</span> 
+              <span class="terminal-command">cat /etc/passwd | grep wendy</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 1s;">
+              <span class="terminal-output">wendy:x:1001:1001:Wendy Rosettini,,,:/home/wendy:/bin/bash</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 1.5s;">
+              <span class="terminal-prompt">wendy@cybersec:~$</span> 
+              <span class="terminal-command">sudo nmap -sS -O target.com</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 2s;">
+              <span class="terminal-output">Starting Nmap 7.94 ( https://nmap.org )</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 2.5s;">
+              <span class="terminal-output">Host is up (0.023s latency)</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 3s;">
+              <span class="terminal-output">22/tcp   open  ssh</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 3.5s;">
+              <span class="terminal-output">80/tcp   open  http</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 4s;">
+              <span class="terminal-output">443/tcp  open  https</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 4.5s;">
+              <span class="terminal-prompt">wendy@cybersec:~$</span> 
+              <span class="terminal-command">echo "Ready to hack the planet! 🔒"</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 5s;">
+              <span class="terminal-output">Ready to hack the planet! 🔒</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 5.5s;">
+              <span class="terminal-prompt">wendy@cybersec:~$</span>
+              <span class="terminal-cursor"></span>
+            </div>
+            
+            <div class="terminal-interactive">
+              <button class="terminal-button" onclick="runCommand('whoami')">whoami</button>
+              <button class="terminal-button" onclick="runCommand('ls -la')">ls -la</button>
+              <button class="terminal-button" onclick="runCommand('ps aux')">ps aux</button>
+              <button class="terminal-button" onclick="runCommand('netstat')">netstat</button>
+              <button class="terminal-button" onclick="runCommand('clear')">clear</button>
+            </div>
+          </div>
+        </div>
+        
         <div class="security-visual">
           <div class="hexagon-grid">
             <div class="hex-item">
@@ -1280,6 +1459,54 @@
   </footer>
 
   <script>
+    // Interactive Terminal Commands
+    const terminalCommands = {
+      'whoami': 'wendy\nCybersecurity Engineer & Penetration Tester',
+      'ls -la': 'total 24\ndrwxr-xr-x  3 wendy wendy 4096 Dec 20 10:30 .\ndrwxr-xr-x  5 root  root  4096 Dec 19 15:22 ..\n-rw-r--r--  1 wendy wendy  220 Dec 19 15:22 .bash_logout\n-rw-r--r--  1 wendy wendy 3771 Dec 19 15:22 .bashrc\ndrwxr-xr-x  2 wendy wendy 4096 Dec 20 10:30 exploits\n-rw-r--r--  1 wendy wendy  807 Dec 19 15:22 .profile\n-rwxr-xr-x  1 wendy wendy 1337 Dec 20 09:15 pentest.py',
+      'ps aux': 'USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND\nroot         1  0.0  0.1  19696  2984 ?        Ss   09:15   0:01 /sbin/init\nroot       234  0.0  0.2  45320  4832 ?        S    09:15   0:00 /usr/sbin/sshd\nwendy     1337  0.2  1.5 234567 31024 pts/0    S+   10:30   0:05 python3 exploit.py\nwendy     1984  0.0  0.1  21532  3456 pts/1    R+   10:45   0:00 ps aux',
+      'netstat': 'Active Internet connections:\nProto Recv-Q Send-Q Local Address           Foreign Address         State\ntcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN\ntcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN\ntcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN\ntcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN'
+    };
+
+    function runCommand(cmd) {
+      const terminal = document.getElementById('terminal');
+      const cursor = terminal.querySelector('.terminal-cursor');
+      
+      // Create new command line
+      const commandLine = document.createElement('div');
+      commandLine.className = 'terminal-line';
+      commandLine.innerHTML = `<span class="terminal-prompt">wendy@cybersec:~$</span> <span class="terminal-command">${cmd}</span>`;
+      
+      // Insert before cursor line
+      const cursorLine = cursor.parentElement;
+      terminal.insertBefore(commandLine, cursorLine);
+      
+      // Add output if command exists
+      if (cmd === 'clear') {
+        // Clear all lines except the last one with cursor
+        const lines = terminal.querySelectorAll('.terminal-line:not(:last-child)');
+        lines.forEach(line => line.remove());
+        return;
+      }
+      
+      if (terminalCommands[cmd]) {
+        const outputLines = terminalCommands[cmd].split('\n');
+        outputLines.forEach(line => {
+          const outputLine = document.createElement('div');
+          outputLine.className = 'terminal-line';
+          outputLine.innerHTML = `<span class="terminal-output">${line}</span>`;
+          terminal.insertBefore(outputLine, cursorLine);
+        });
+      } else {
+        const errorLine = document.createElement('div');
+        errorLine.className = 'terminal-line';
+        errorLine.innerHTML = `<span class="terminal-output">bash: ${cmd}: command not found</span>`;
+        terminal.insertBefore(errorLine, cursorLine);
+      }
+      
+      // Scroll to bottom
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
     // Mobile Menu Toggle
     function toggleMenu() {
       const nav = document.getElementById('nav');
