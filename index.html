@@ -169,20 +169,43 @@
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      grid-template-rows: auto auto;
+      gap: 3rem;
       align-items: center;
     }
 
     .hero-text {
       animation: slideInLeft 1s ease-out;
+      grid-column: 1;
+      grid-row: 1;
     }
 
-    .hero-visual {
+    .hero-photo {
+      animation: slideInLeft 1s ease-out 0.3s both;
+      grid-column: 1;
+      grid-row: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-skills {
       animation: slideInRight 1s ease-out;
+      grid-column: 2;
+      grid-row: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2rem;
+      gap: 1rem;
+    }
+
+    .hero-terminal {
+      animation: slideInRight 1s ease-out 0.3s both;
+      grid-column: 2;
+      grid-row: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     @keyframes slideInLeft {
@@ -423,23 +446,13 @@
     }
 
     /* Security Animation */
-    .security-visual {
-      position: relative;
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-
     .hexagon-grid {
       width: 100%;
-      height: 300px;
+      max-width: 400px;
+      height: 250px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      gap: 0.8rem;
       padding: 1rem;
     }
 
@@ -447,7 +460,7 @@
       background: rgba(0, 212, 255, 0.05);
       border: 1px solid rgba(0, 212, 255, 0.2);
       border-radius: 1rem;
-      padding: 1rem;
+      padding: 0.8rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -475,15 +488,27 @@
     }
 
     .hex-icon {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: var(--accent-primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .hex-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: var(--text-secondary);
       text-align: center;
+      line-height: 1.2;
+    }
+
+    /* Terminal in grid */
+    .terminal-container {
+      background: rgba(10, 14, 39, 0.95);
+      border: 2px solid var(--accent-primary);
+      border-radius: 0.5rem;
+      box-shadow: var(--shadow-glow);
+      overflow: hidden;
+      width: 100%;
+      max-width: 400px;
     }
 
     /* Skills Section */
@@ -989,6 +1014,7 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-content">
+      <!-- Top Left: Testo principale -->
       <div class="hero-text">
         <div class="terminal-text">$ whoami</div>
         <h1>Wendy Rosettini</h1>
@@ -1006,95 +1032,98 @@
           </a>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="photo-container">
-          <img src="photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
-        </div>
-        
-        <div class="security-visual">
-          <div class="hexagon-grid">
-            <div class="hex-item">
-              <i class="bi bi-shield-lock hex-icon"></i>
-              <span class="hex-label">Penetration Testing</span>
-            </div>
-            <div class="hex-item">
-              <i class="bi bi-bug hex-icon"></i>
-              <span class="hex-label">Malware Analysis</span>
-            </div>
-            <div class="hex-item">
-              <i class="bi bi-terminal hex-icon"></i>
-              <span class="hex-label">Ethical Hacking</span>
-            </div>
-            <div class="hex-item">
-              <i class="bi bi-hdd-network hex-icon"></i>
-              <span class="hex-label">Network Security</span>
-            </div>
-            <div class="hex-item">
-              <i class="bi bi-code-slash hex-icon"></i>
-              <span class="hex-label">Secure Coding</span>
-            </div>
-            <div class="hex-item">
-              <i class="bi bi-lock hex-icon"></i>
-              <span class="hex-label">Cryptography</span>
-            </div>
+      
+      <!-- Top Right: Competenze -->
+      <div class="hero-skills">
+        <div class="hexagon-grid">
+          <div class="hex-item">
+            <i class="bi bi-shield-lock hex-icon"></i>
+            <span class="hex-label">Penetration Testing</span>
           </div>
-          
-          <!-- Interactive Terminal moved here -->
-          <div class="terminal-container">
-            <div class="terminal-header-bar">
-              <div class="terminal-dots">
-                <div class="terminal-dot dot-red"></div>
-                <div class="terminal-dot dot-yellow"></div>
-                <div class="terminal-dot dot-green"></div>
-              </div>
-              <div class="terminal-title">wendy@cybersec:~$</div>
+          <div class="hex-item">
+            <i class="bi bi-bug hex-icon"></i>
+            <span class="hex-label">Malware Analysis</span>
+          </div>
+          <div class="hex-item">
+            <i class="bi bi-terminal hex-icon"></i>
+            <span class="hex-label">Ethical Hacking</span>
+          </div>
+          <div class="hex-item">
+            <i class="bi bi-hdd-network hex-icon"></i>
+            <span class="hex-label">Network Security</span>
+          </div>
+          <div class="hex-item">
+            <i class="bi bi-code-slash hex-icon"></i>
+            <span class="hex-label">Secure Coding</span>
+          </div>
+          <div class="hex-item">
+            <i class="bi bi-lock hex-icon"></i>
+            <span class="hex-label">Cryptography</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Left: Foto -->
+      <div class="hero-photo">
+        <img src="photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
+      </div>
+      
+      <!-- Bottom Right: Terminale -->
+      <div class="hero-terminal">
+        <div class="terminal-container">
+          <div class="terminal-header-bar">
+            <div class="terminal-dots">
+              <div class="terminal-dot dot-red"></div>
+              <div class="terminal-dot dot-yellow"></div>
+              <div class="terminal-dot dot-green"></div>
             </div>
-            <div class="terminal-body" id="terminal">
-              <div class="terminal-line" style="animation-delay: 0.5s;">
-                <span class="terminal-prompt">wendy@cybersec:~$</span> 
-                <span class="terminal-command">cat /etc/passwd | grep wendy</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 1s;">
-                <span class="terminal-output">wendy:x:1001:1001:Wendy Rosettini,,,:/home/wendy:/bin/bash</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 1.5s;">
-                <span class="terminal-prompt">wendy@cybersec:~$</span> 
-                <span class="terminal-command">sudo nmap -sS -O target.com</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 2s;">
-                <span class="terminal-output">Starting Nmap 7.94 ( https://nmap.org )</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 2.5s;">
-                <span class="terminal-output">Host is up (0.023s latency)</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 3s;">
-                <span class="terminal-output">22/tcp   open  ssh</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 3.5s;">
-                <span class="terminal-output">80/tcp   open  http</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 4s;">
-                <span class="terminal-output">443/tcp  open  https</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 4.5s;">
-                <span class="terminal-prompt">wendy@cybersec:~$</span> 
-                <span class="terminal-command">echo "Ready to hack the planet! 🔒"</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 5s;">
-                <span class="terminal-output">Ready to hack the planet! 🔒</span>
-              </div>
-              <div class="terminal-line" style="animation-delay: 5.5s;">
-                <span class="terminal-prompt">wendy@cybersec:~$</span>
-                <span class="terminal-cursor"></span>
-              </div>
-              
-              <div class="terminal-interactive">
-                <button class="terminal-button" onclick="runCommand('whoami')">whoami</button>
-                <button class="terminal-button" onclick="runCommand('ls -la')">ls -la</button>
-                <button class="terminal-button" onclick="runCommand('ps aux')">ps aux</button>
-                <button class="terminal-button" onclick="runCommand('netstat')">netstat</button>
-                <button class="terminal-button" onclick="runCommand('clear')">clear</button>
-              </div>
+            <div class="terminal-title">wendy@cybersec:~$</div>
+          </div>
+          <div class="terminal-body" id="terminal">
+            <div class="terminal-line" style="animation-delay: 0.5s;">
+              <span class="terminal-prompt">wendy@cybersec:~$</span> 
+              <span class="terminal-command">cat /etc/passwd | grep wendy</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 1s;">
+              <span class="terminal-output">wendy:x:1001:1001:Wendy Rosettini,,,:/home/wendy:/bin/bash</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 1.5s;">
+              <span class="terminal-prompt">wendy@cybersec:~$</span> 
+              <span class="terminal-command">sudo nmap -sS -O target.com</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 2s;">
+              <span class="terminal-output">Starting Nmap 7.94 ( https://nmap.org )</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 2.5s;">
+              <span class="terminal-output">Host is up (0.023s latency)</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 3s;">
+              <span class="terminal-output">22/tcp   open  ssh</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 3.5s;">
+              <span class="terminal-output">80/tcp   open  http</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 4s;">
+              <span class="terminal-output">443/tcp  open  https</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 4.5s;">
+              <span class="terminal-prompt">wendy@cybersec:~$</span> 
+              <span class="terminal-command">echo "Ready to hack the planet! 🔒"</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 5s;">
+              <span class="terminal-output">Ready to hack the planet! 🔒</span>
+            </div>
+            <div class="terminal-line" style="animation-delay: 5.5s;">
+              <span class="terminal-prompt">wendy@cybersec:~$</span>
+              <span class="terminal-cursor"></span>
+            </div>
+            
+            <div class="terminal-interactive">
+              <button class="terminal-button" onclick="runCommand('whoami')">whoami</button>
+              <button class="terminal-button" onclick="runCommand('ls -la')">ls -la</button>
+              <button class="terminal-button" onclick="runCommand('ps aux')">ps aux</button>
+              <button class="terminal-button" onclick="runCommand('netstat')">netstat</button>
+              <button class="terminal-button" onclick="runCommand('clear')">clear</button>
             </div>
           </div>
         </div>
