@@ -426,16 +426,17 @@
     .security-visual {
       position: relative;
       width: 100%;
-      height: 300px;
+      height: auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 2rem;
     }
 
     .hexagon-grid {
-      position: absolute;
       width: 100%;
-      height: 100%;
+      height: 300px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
@@ -1010,65 +1011,6 @@
           <img src="photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
         </div>
         
-        <!-- Interactive Terminal -->
-        <div class="terminal-container">
-          <div class="terminal-header-bar">
-            <div class="terminal-dots">
-              <div class="terminal-dot dot-red"></div>
-              <div class="terminal-dot dot-yellow"></div>
-              <div class="terminal-dot dot-green"></div>
-            </div>
-            <div class="terminal-title">wendy@cybersec:~$</div>
-          </div>
-          <div class="terminal-body" id="terminal">
-            <div class="terminal-line" style="animation-delay: 0.5s;">
-              <span class="terminal-prompt">wendy@cybersec:~$</span> 
-              <span class="terminal-command">cat /etc/passwd | grep wendy</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 1s;">
-              <span class="terminal-output">wendy:x:1001:1001:Wendy Rosettini,,,:/home/wendy:/bin/bash</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 1.5s;">
-              <span class="terminal-prompt">wendy@cybersec:~$</span> 
-              <span class="terminal-command">sudo nmap -sS -O target.com</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 2s;">
-              <span class="terminal-output">Starting Nmap 7.94 ( https://nmap.org )</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 2.5s;">
-              <span class="terminal-output">Host is up (0.023s latency)</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 3s;">
-              <span class="terminal-output">22/tcp   open  ssh</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 3.5s;">
-              <span class="terminal-output">80/tcp   open  http</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 4s;">
-              <span class="terminal-output">443/tcp  open  https</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 4.5s;">
-              <span class="terminal-prompt">wendy@cybersec:~$</span> 
-              <span class="terminal-command">echo "Ready to hack the planet! 🔒"</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 5s;">
-              <span class="terminal-output">Ready to hack the planet! 🔒</span>
-            </div>
-            <div class="terminal-line" style="animation-delay: 5.5s;">
-              <span class="terminal-prompt">wendy@cybersec:~$</span>
-              <span class="terminal-cursor"></span>
-            </div>
-            
-            <div class="terminal-interactive">
-              <button class="terminal-button" onclick="runCommand('whoami')">whoami</button>
-              <button class="terminal-button" onclick="runCommand('ls -la')">ls -la</button>
-              <button class="terminal-button" onclick="runCommand('ps aux')">ps aux</button>
-              <button class="terminal-button" onclick="runCommand('netstat')">netstat</button>
-              <button class="terminal-button" onclick="runCommand('clear')">clear</button>
-            </div>
-          </div>
-        </div>
-        
         <div class="security-visual">
           <div class="hexagon-grid">
             <div class="hex-item">
@@ -1094,6 +1036,65 @@
             <div class="hex-item">
               <i class="bi bi-lock hex-icon"></i>
               <span class="hex-label">Cryptography</span>
+            </div>
+          </div>
+          
+          <!-- Interactive Terminal moved here -->
+          <div class="terminal-container">
+            <div class="terminal-header-bar">
+              <div class="terminal-dots">
+                <div class="terminal-dot dot-red"></div>
+                <div class="terminal-dot dot-yellow"></div>
+                <div class="terminal-dot dot-green"></div>
+              </div>
+              <div class="terminal-title">wendy@cybersec:~$</div>
+            </div>
+            <div class="terminal-body" id="terminal">
+              <div class="terminal-line" style="animation-delay: 0.5s;">
+                <span class="terminal-prompt">wendy@cybersec:~$</span> 
+                <span class="terminal-command">cat /etc/passwd | grep wendy</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 1s;">
+                <span class="terminal-output">wendy:x:1001:1001:Wendy Rosettini,,,:/home/wendy:/bin/bash</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 1.5s;">
+                <span class="terminal-prompt">wendy@cybersec:~$</span> 
+                <span class="terminal-command">sudo nmap -sS -O target.com</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 2s;">
+                <span class="terminal-output">Starting Nmap 7.94 ( https://nmap.org )</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 2.5s;">
+                <span class="terminal-output">Host is up (0.023s latency)</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 3s;">
+                <span class="terminal-output">22/tcp   open  ssh</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 3.5s;">
+                <span class="terminal-output">80/tcp   open  http</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 4s;">
+                <span class="terminal-output">443/tcp  open  https</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 4.5s;">
+                <span class="terminal-prompt">wendy@cybersec:~$</span> 
+                <span class="terminal-command">echo "Ready to hack the planet! 🔒"</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 5s;">
+                <span class="terminal-output">Ready to hack the planet! 🔒</span>
+              </div>
+              <div class="terminal-line" style="animation-delay: 5.5s;">
+                <span class="terminal-prompt">wendy@cybersec:~$</span>
+                <span class="terminal-cursor"></span>
+              </div>
+              
+              <div class="terminal-interactive">
+                <button class="terminal-button" onclick="runCommand('whoami')">whoami</button>
+                <button class="terminal-button" onclick="runCommand('ls -la')">ls -la</button>
+                <button class="terminal-button" onclick="runCommand('ps aux')">ps aux</button>
+                <button class="terminal-button" onclick="runCommand('netstat')">netstat</button>
+                <button class="terminal-button" onclick="runCommand('clear')">clear</button>
+              </div>
             </div>
           </div>
         </div>
