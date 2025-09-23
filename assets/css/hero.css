@@ -52,58 +52,57 @@
 .terminal-text {
   color: var(--accent-success);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  font-weight: 500;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   background: var(--gradient-2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
+  font-weight: 400;
+  opacity: 0.9;
 }
 
 .hero-description {
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   line-height: 1.8;
+  font-size: 1.1rem;
+  opacity: 0.85;
 }
 
 /* Profile Photo */
 .profile-photo {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--accent-primary);
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
   animation: photoFloat 6s ease-in-out infinite;
   position: relative;
-  max-width: 90vw; /* Responsive max width */
-  height: auto;
-  aspect-ratio: 1; /* Mantiene proporzioni quadrate */
+  max-width: 90vw;
+  aspect-ratio: 1;
+  transition: all 0.3s ease;
 }
 
-.profile-photo::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), var(--accent-success));
-  z-index: -1;
-  animation: photoRotate 10s linear infinite;
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(0, 212, 255, 0.8);
 }
 
 .photo-container {
@@ -113,10 +112,24 @@
   margin-bottom: 2rem;
 }
 
+.photo-container::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary), var(--accent-success));
+  z-index: -1;
+  animation: photoRotate 15s linear infinite;
+  opacity: 0.7;
+}
+
 /* Hero Stats */
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1.5rem;
   animation: slideInUp 1s ease-out 0.6s both;
 }
@@ -124,26 +137,45 @@
 .stat-item {
   text-align: center;
   padding: 1.5rem 1rem;
-  background: rgba(0, 20, 40, 0.6);
-  border: 1px solid rgba(0, 255, 136, 0.2);
+  background: linear-gradient(135deg, rgba(0, 20, 40, 0.8), rgba(0, 40, 80, 0.6));
+  border: 1px solid rgba(0, 255, 136, 0.3);
   border-radius: 12px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .stat-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   border-color: var(--primary-color);
-  box-shadow: 0 8px 25px rgba(0, 255, 136, 0.2);
+  box-shadow: 0 12px 35px rgba(0, 255, 136, 0.25);
+}
+
+.stat-item:hover::before {
+  transform: scaleX(1);
 }
 
 .stat-number {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--primary-color);
   font-family: var(--font-mono);
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+  line-height: 1;
 }
 
 .stat-label {
@@ -151,6 +183,7 @@
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
 /* Hero Buttons */
@@ -171,4 +204,48 @@
   border-radius: 8px;
   transition: all 0.3s ease;
   font-weight: 500;
+}
+
+/* Enhanced animations */
+@keyframes photoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes photoRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

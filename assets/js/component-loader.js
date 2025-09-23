@@ -75,14 +75,23 @@ class ComponentLoader {
         <div id="terminal-content">
           <div class="terminal-line">
             <span class="prompt">wendy@cybersec:~$</span>
-            <span class="command">ls -la /skills/</span>
+            <span class="command">cat /etc/skills.txt</span>
           </div>
           <div class="terminal-output">
-            <div>total 16</div>
-            <div>drwxr-xr-x  4 wendy cybersec  128 Dec 15 10:30 penetration-testing/</div>
-            <div>drwxr-xr-x  3 wendy cybersec   96 Dec 15 10:30 network-security/</div>
-            <div>drwxr-xr-x  5 wendy cybersec  160 Dec 15 10:30 malware-analysis/</div>
-            <div>drwxr-xr-x  2 wendy cybersec   64 Dec 15 10:30 cryptography/</div>
+            <div>penetration_testing: advanced</div>
+            <div>network_security: expert</div>
+            <div>malware_analysis: proficient</div>
+            <div>cryptography: intermediate</div>
+          </div>
+          <div class="terminal-line">
+            <span class="prompt">wendy@cybersec:~$</span>
+            <span class="command">nmap -sS localhost</span>
+          </div>
+          <div class="terminal-output">
+            <div>PORT     STATE SERVICE</div>
+            <div>22/tcp   open  ssh</div>
+            <div>80/tcp   open  http</div>
+            <div>443/tcp  open  https</div>
           </div>
           <div class="terminal-line">
             <span class="prompt">wendy@cybersec:~$</span>
