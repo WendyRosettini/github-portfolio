@@ -12,44 +12,41 @@
   max-width: 1200px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 3rem;
-  align-items: center;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  align-items: start;
 }
 
 .hero-text {
   animation: slideInLeft 1s ease-out;
   grid-column: 1;
   grid-row: 1;
+  padding-right: 2rem;
 }
 
 .hero-photo {
   animation: slideInRight 1s ease-out;
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 1 / 3;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.hero-skills {
-  animation: slideInLeft 1s ease-out 0.3s both;
-  grid-column: 1;
-  grid-row: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  padding-top: 2rem;
 }
 
 .hero-terminal {
-  animation: slideInRight 1s ease-out 0.3s both;
-  grid-column: 2;
+  animation: slideInLeft 1s ease-out 0.3s both;
+  grid-column: 1;
   grid-row: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 2rem;
+}
+
+.hero-stats {
+  animation: slideInUp 1s ease-out 0.6s both;
+  grid-column: 1 / 3;
+  grid-row: 3;
+  margin-top: 3rem;
 }
 
 .terminal-text {

@@ -31,7 +31,7 @@ class ComponentLoader {
       
       hero: `<!-- Hero Section Component -->
 <div class="hero-content">
-  <!-- Top Left: Main Text -->
+  <!-- Main Text Section -->
   <div class="hero-text">
     <div class="terminal-text">$ whoami</div>
     <h1>Wendy Rosettini</h1>
@@ -52,7 +52,7 @@ class ComponentLoader {
     </div>
   </div>
 
-  <!-- Top Right: Profile Photo -->
+  <!-- Profile Photo -->
   <div class="hero-photo">
     <div class="photo-container">
       <img src="assets/images/photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
@@ -60,7 +60,7 @@ class ComponentLoader {
     </div>
   </div>
 
-  <!-- Bottom Left: Terminal -->
+  <!-- Terminal Section -->
   <div class="hero-terminal">
     <div class="terminal-window">
       <div class="terminal-header">
@@ -93,7 +93,7 @@ class ComponentLoader {
     </div>
   </div>
 
-  <!-- Bottom Right: Stats -->
+  <!-- Stats Section -->
   <div class="hero-stats">
     <div class="stat-item">
       <div class="stat-number">50+</div>
@@ -106,6 +106,10 @@ class ComponentLoader {
     <div class="stat-item">
       <div class="stat-number">3+</div>
       <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">25+</div>
+      <div class="stat-label">Vulnerabilities Found</div>
     </div>
   </div>
 </div>`,
