@@ -4,22 +4,602 @@
 
 class ComponentLoader {
   constructor() {
-    this.componentsPath = './components/';
+    this.components = {};
+    this.initializeComponents();
   }
 
   /**
-   * Load a component from HTML file
-   * @param {string} componentName - Name of the component file (without .html)
+   * Initialize components data - embedded in JS for file:// compatibility
+   */
+  initializeComponents() {
+    // We'll embed the component HTML directly in JavaScript to avoid fetch issues
+    this.components = {
+      header: `<!-- Header Component -->
+<div class="header-container">
+  <a href="#" class="logo">wendy.rosettini</a>
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+  <button class="mobile-menu-toggle" onclick="toggleMenu()">
+    <i class="bi bi-list"></i>
+  </button>
+</div>`,
+      
+      hero: `<!-- Hero Section Component -->
+<div class="hero-content">
+  <!-- Top Left: Main Text -->
+  <div class="hero-text">
+    <div class="terminal-text">$ whoami</div>
+    <h1>Wendy Rosettini</h1>
+    <p class="hero-subtitle">Cybersecurity Engineer & Penetration Tester</p>
+    <p class="hero-description">
+      MSc student at Sapienza University specializing in offensive security, malware analysis, and network defense. 
+      Passionate about ethical hacking and securing digital infrastructures.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">
+        <i class="bi bi-envelope"></i>
+        Get In Touch
+      </a>
+      <a href="#projects" class="btn-secondary">
+        <i class="bi bi-folder"></i>
+        View Projects
+      </a>
+    </div>
+  </div>
+
+  <!-- Top Right: Profile Photo -->
+  <div class="hero-photo">
+    <div class="photo-container">
+      <img src="assets/images/photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
+      <div class="photo-border"></div>
+    </div>
+  </div>
+
+  <!-- Bottom Left: Terminal -->
+  <div class="hero-terminal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <span class="control close"></span>
+          <span class="control minimize"></span>
+          <span class="control maximize"></span>
+        </div>
+        <span class="terminal-title">wendy@cybersec:~</span>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-content">
+          <div class="terminal-line">
+            <span class="prompt">wendy@cybersec:~$</span>
+            <span class="command">ls -la /skills/</span>
+          </div>
+          <div class="terminal-output">
+            <div>total 16</div>
+            <div>drwxr-xr-x  4 wendy cybersec  128 Dec 15 10:30 penetration-testing/</div>
+            <div>drwxr-xr-x  3 wendy cybersec   96 Dec 15 10:30 network-security/</div>
+            <div>drwxr-xr-x  5 wendy cybersec  160 Dec 15 10:30 malware-analysis/</div>
+            <div>drwxr-xr-x  2 wendy cybersec   64 Dec 15 10:30 cryptography/</div>
+          </div>
+          <div class="terminal-line">
+            <span class="prompt">wendy@cybersec:~$</span>
+            <span class="cursor">|</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Right: Stats -->
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">CTF Challenges</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">Security Projects</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+</div>`,
+
+      stats: `<!-- Stats Component -->
+<div class="stats-container">
+  <div class="stat-card">
+    <div class="stat-icon">
+      <i class="bi bi-shield-check"></i>
+    </div>
+    <div class="stat-content">
+      <div class="stat-number">50+</div>
+      <div class="stat-title">CTF Challenges Solved</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">
+      <i class="bi bi-bug"></i>
+    </div>
+    <div class="stat-content">
+      <div class="stat-number">25+</div>
+      <div class="stat-title">Vulnerabilities Found</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">
+      <i class="bi bi-trophy"></i>
+    </div>
+    <div class="stat-content">
+      <div class="stat-number">10+</div>
+      <div class="stat-title">Security Certifications</div>
+    </div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon">
+      <i class="bi bi-people"></i>
+    </div>
+    <div class="stat-content">
+      <div class="stat-number">100+</div>
+      <div class="stat-title">Security Assessments</div>
+    </div>
+  </div>
+</div>`,
+
+      footer: `<!-- Footer Component -->
+<div class="social-links">
+  <a href="https://github.com/wendytrilly00w" target="_blank" class="social-link">
+    <i class="bi bi-github"></i>
+  </a>
+  <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank" class="social-link">
+    <i class="bi bi-linkedin"></i>
+  </a>
+  <a href="mailto:wendy.rosettini@gmail.com" class="social-link">
+    <i class="bi bi-envelope"></i>
+  </a>
+  <a href="#" class="social-link">
+    <i class="bi bi-twitter"></i>
+  </a>
+</div>
+<p style="color: var(--text-secondary); font-size: 0.9rem;">
+  © 2024 Wendy Rosettini | Cybersecurity Engineer | Built with passion for security
+</p>
+<p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem;">
+  <i class="bi bi-shield-check"></i> Securing the digital world, one vulnerability at a time
+</p>`,
+
+      skills: `<!-- Skills Section Component -->
+<div class="section-header reveal">
+  <h2 class="section-title">Technical Arsenal</h2>
+  <p class="section-subtitle">Specialized tools and technologies for cybersecurity</p>
+</div>
+
+<div class="skills-grid reveal">
+  <!-- Core Security Skills -->
+  <div class="skill-category">
+    <h3 class="category-title">
+      <i class="bi bi-shield-check"></i>
+      Core Security
+    </h3>
+    <div class="skills-list">
+      <div class="skill-item">
+        <span class="skill-name">Penetration Testing</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Network Security</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Malware Analysis</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 80%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Cryptography</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 75%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tools & Frameworks -->
+  <div class="skill-category">
+    <h3 class="category-title">
+      <i class="bi bi-tools"></i>
+      Tools & Frameworks
+    </h3>
+    <div class="skills-list">
+      <div class="skill-item">
+        <span class="skill-name">Metasploit</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Burp Suite</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 90%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Nmap/Nessus</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 88%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Wireshark</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 82%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Programming Languages -->
+  <div class="skill-category">
+    <h3 class="category-title">
+      <i class="bi bi-code-slash"></i>
+      Programming
+    </h3>
+    <div class="skills-list">
+      <div class="skill-item">
+        <span class="skill-name">Python</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 92%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">C/C++</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 78%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Bash/PowerShell</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">JavaScript</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 70%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Specialized Areas -->
+  <div class="skill-category">
+    <h3 class="category-title">
+      <i class="bi bi-cpu"></i>
+      Specialized
+    </h3>
+    <div class="skills-list">
+      <div class="skill-item">
+        <span class="skill-name">OSINT</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 88%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Reverse Engineering</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Digital Forensics</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 72%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Social Engineering</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 80%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`,
+
+      projects: `<!-- Projects Section Component -->
+<div class="section-header reveal">
+  <h2 class="section-title">Security Projects</h2>
+  <p class="section-subtitle">Real-world cybersecurity implementations and research</p>
+</div>
+
+<div class="projects-grid reveal">
+  <div class="project-card">
+    <div class="project-header">
+      <h3>Network Vulnerability Scanner</h3>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Nmap</span>
+        <span class="tag">Network Security</span>
+      </div>
+    </div>
+    <p class="project-description">
+      Advanced network vulnerability assessment tool with automated reporting and CVSS scoring. 
+      Implements custom scanning modules for enterprise network analysis.
+    </p>
+    <div class="project-features">
+      <span class="feature">• Automated vulnerability detection</span>
+      <span class="feature">• Custom CVE database integration</span>
+      <span class="feature">• Detailed security reports</span>
+    </div>
+    <div class="project-links">
+      <a href="#" class="project-link">
+        <i class="bi bi-github"></i> View Code
+      </a>
+      <a href="#" class="project-link">
+        <i class="bi bi-eye"></i> Live Demo
+      </a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <h3>Malware Analysis Toolkit</h3>
+      <div class="project-tags">
+        <span class="tag">C++</span>
+        <span class="tag">Reverse Engineering</span>
+        <span class="tag">Static Analysis</span>
+      </div>
+    </div>
+    <p class="project-description">
+      Comprehensive malware analysis framework for static and dynamic analysis. 
+      Features sandbox environment and behavioral analysis capabilities.
+    </p>
+    <div class="project-features">
+      <span class="feature">• Static code analysis</span>
+      <span class="feature">• Dynamic behavior monitoring</span>
+      <span class="feature">• Threat intelligence integration</span>
+    </div>
+    <div class="project-links">
+      <a href="#" class="project-link">
+        <i class="bi bi-github"></i> View Code
+      </a>
+      <a href="#" class="project-link">
+        <i class="bi bi-file-text"></i> Documentation
+      </a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <h3>Automotive Security Research</h3>
+      <div class="project-tags">
+        <span class="tag">CAN Bus</span>
+        <span class="tag">Hardware Security</span>
+        <span class="tag">Cryptography</span>
+      </div>
+    </div>
+    <p class="project-description">
+      Bachelor's thesis project on automotive cybersecurity focusing on CAN bus protocols 
+      and Hardware Security Module (HSM) implementation for vehicle networks.
+    </p>
+    <div class="project-features">
+      <span class="feature">• CAN bus security analysis</span>
+      <span class="feature">• HSM integration research</span>
+      <span class="feature">• Cryptographic protocols</span>
+    </div>
+    <div class="project-links">
+      <a href="#" class="project-link">
+        <i class="bi bi-file-earmark-pdf"></i> Research Paper
+      </a>
+      <a href="#" class="project-link">
+        <i class="bi bi-presentation"></i> Presentation
+      </a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <h3>Web Application Penetration Testing Framework</h3>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Web Security</span>
+        <span class="tag">OWASP</span>
+      </div>
+    </div>
+    <p class="project-description">
+      Automated web application security testing tool following OWASP Top 10 methodology. 
+      Includes custom payload generation and vulnerability chaining detection.
+    </p>
+    <div class="project-features">
+      <span class="feature">• OWASP Top 10 coverage</span>
+      <span class="feature">• Custom payload library</span>
+      <span class="feature">• Automated reporting</span>
+    </div>
+    <div class="project-links">
+      <a href="#" class="project-link">
+        <i class="bi bi-github"></i> View Code
+      </a>
+      <a href="#" class="project-link">
+        <i class="bi bi-play-circle"></i> Demo Video
+      </a>
+    </div>
+  </div>
+</div>`,
+
+      experience: `<!-- Experience Section Component -->
+<div class="section-header reveal">
+  <h2 class="section-title">Professional Journey</h2>
+  <p class="section-subtitle">Academic and professional milestones in cybersecurity</p>
+</div>
+
+<div class="timeline reveal">
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <div class="timeline-date">2024 - Present</div>
+      <h3>MSc Cybersecurity Engineering</h3>
+      <p>Sapienza University of Rome</p>
+      <p>Advanced studies in offensive security, malware analysis, and network defense strategies. Research focus on AI-driven threat detection and automotive security protocols.</p>
+    </div>
+    <div></div>
+  </div>
+  
+  <div class="timeline-item">
+    <div></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2023 - 2024</div>
+      <h3>Junior Penetration Tester</h3>
+      <p>Freelance Security Consultant</p>
+      <p>Conducted security assessments for small to medium enterprises. Specialized in web application testing, network infrastructure analysis, and security awareness training.</p>
+    </div>
+  </div>
+  
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <div class="timeline-date">2023</div>
+      <h3>Bachelor's Degree Thesis</h3>
+      <p>Automotive Security and Cryptography</p>
+      <p>Research on Hardware Security Modules (HSM) implementation for vehicle security systems. Analyzed CAN bus vulnerabilities and proposed cryptographic solutions for automotive networks.</p>
+    </div>
+    <div></div>
+  </div>
+  
+  <div class="timeline-item">
+    <div></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2020 - 2023</div>
+      <h3>BSc Computer Engineering</h3>
+      <p>Università degli Studi dell'Aquila</p>
+      <p>Comprehensive foundation in computer systems with focus on: System Security, Cryptography, Network Protocols, Software Engineering, and Digital Signal Processing.</p>
+    </div>
+  </div>
+  
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <div class="timeline-date">2022 - Present</div>
+      <h3>CTF Competitions & Security Research</h3>
+      <p>Active Participant & Team Member</p>
+      <p>Regular participation in Capture The Flag competitions including HackTheBox, TryHackMe, and international CTF events. Active contributor to cybersecurity research and vulnerability disclosure.</p>
+    </div>
+    <div></div>
+  </div>
+  
+  <div class="timeline-item">
+    <div></div>
+    <div class="timeline-content">
+      <div class="timeline-date">2021 - 2023</div>
+      <h3>Cybersecurity Internship</h3>
+      <p>Regional IT Department</p>
+      <p>Gained hands-on experience in network security monitoring, incident response procedures, and security policy implementation. Assisted in vulnerability assessments and security audits.</p>
+    </div>
+  </div>
+</div>`,
+
+      contact: `<!-- Contact Section Component -->
+<div class="section-header reveal">
+  <h2 class="section-title">Let's Connect</h2>
+  <p class="section-subtitle">Open to cybersecurity opportunities and collaborations</p>
+</div>
+
+<div class="contact-container reveal">
+  <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+    I'm always interested in discussing cybersecurity challenges, penetration testing projects, 
+    or potential collaboration opportunities. Feel free to reach out!
+  </p>
+  
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon">
+        <i class="bi bi-envelope"></i>
+      </div>
+      <a href="mailto:wendy.rosettini@gmail.com" class="contact-link">
+        wendy.rosettini@gmail.com
+      </a>
+    </div>
+    
+    <div class="contact-item">
+      <div class="contact-icon">
+        <i class="bi bi-linkedin"></i>
+      </div>
+      <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank" class="contact-link">
+        LinkedIn Profile
+      </a>
+    </div>
+    
+    <div class="contact-item">
+      <div class="contact-icon">
+        <i class="bi bi-github"></i>
+      </div>
+      <a href="https://github.com/wendytrilly00w" target="_blank" class="contact-link">
+        GitHub Projects
+      </a>
+    </div>
+    
+    <div class="contact-item">
+      <div class="contact-icon">
+        <i class="bi bi-geo-alt"></i>
+      </div>
+      <span class="contact-link">L'Aquila, Italy</span>
+    </div>
+  </div>
+
+  <!-- Terminal-style contact form -->
+  <div class="terminal-contact" style="margin-top: 3rem;">
+    <div class="terminal-header">
+      <span>wendy@portfolio:~$ contact_form --interactive</span>
+    </div>
+    <div class="terminal-body">
+      <form class="contact-form" id="contactForm">
+        <div class="terminal-line">
+          <span class="prompt">Name:</span>
+          <input type="text" name="name" placeholder="Enter your name..." class="terminal-input">
+        </div>
+        <div class="terminal-line">
+          <span class="prompt">Email:</span>
+          <input type="email" name="email" placeholder="your.email@domain.com" class="terminal-input">
+        </div>
+        <div class="terminal-line">
+          <span class="prompt">Subject:</span>
+          <input type="text" name="subject" placeholder="Collaboration opportunity..." class="terminal-input">
+        </div>
+        <div class="terminal-line">
+          <span class="prompt">Message:</span>
+          <textarea name="message" placeholder="Your message here..." class="terminal-input terminal-textarea"></textarea>
+        </div>
+        <div class="terminal-line">
+          <button type="submit" class="terminal-button">
+            <i class="bi bi-send"></i> Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>`
+    };
+  }
+
+  /**
+   * Load a component from embedded data
+   * @param {string} componentName - Name of the component
    * @param {string} targetSelector - CSS selector for the target element
    */
   async loadComponent(componentName, targetSelector) {
     try {
-      const response = await fetch(`${this.componentsPath}${componentName}.html`);
-      if (!response.ok) {
-        throw new Error(`Failed to load component: ${componentName}`);
+      const html = this.components[componentName];
+      
+      if (!html) {
+        throw new Error(`Component '${componentName}' not found`);
       }
       
-      const html = await response.text();
       const targetElement = document.querySelector(targetSelector);
       
       if (targetElement) {
