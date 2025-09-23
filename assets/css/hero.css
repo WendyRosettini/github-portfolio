@@ -42,13 +42,6 @@
   margin-top: 2rem;
 }
 
-.hero-stats {
-  animation: slideInUp 1s ease-out 0.6s both;
-  grid-column: 1 / 3;
-  grid-row: 3;
-  margin-top: 3rem;
-}
-
 .terminal-text {
   color: var(--accent-success);
   font-family: 'JetBrains Mono', monospace;
@@ -124,66 +117,6 @@
   z-index: -1;
   animation: photoRotate 15s linear infinite;
   opacity: 0.7;
-}
-
-/* Hero Stats */
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.5rem;
-  animation: slideInUp 1s ease-out 0.6s both;
-}
-
-.stat-item {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  background: linear-gradient(135deg, rgba(0, 20, 40, 0.8), rgba(0, 40, 80, 0.6));
-  border: 1px solid rgba(0, 255, 136, 0.3);
-  border-radius: 12px;
-  backdrop-filter: blur(15px);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.stat-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.stat-item:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary-color);
-  box-shadow: 0 12px 35px rgba(0, 255, 136, 0.25);
-}
-
-.stat-item:hover::before {
-  transform: scaleX(1);
-}
-
-.stat-number {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  font-family: var(--font-mono);
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 500;
 }
 
 /* Hero Buttons */

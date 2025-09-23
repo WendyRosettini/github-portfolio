@@ -69,96 +69,34 @@ class ComponentLoader {
           <span class="control minimize"></span>
           <span class="control maximize"></span>
         </div>
-        <span class="terminal-title">wendy@cybersec:~</span>
+        <span class="terminal-title">wendy@cybersec:~ (Interactive Terminal)</span>
       </div>
       <div class="terminal-body">
         <div id="terminal-content">
           <div class="terminal-line">
             <span class="prompt">wendy@cybersec:~$</span>
-            <span class="command">cat /etc/skills.txt</span>
+            <span class="command">whoami</span>
           </div>
           <div class="terminal-output">
-            <div>penetration_testing: advanced</div>
-            <div>network_security: expert</div>
-            <div>malware_analysis: proficient</div>
-            <div>cryptography: intermediate</div>
+            <div>Wendy Rosettini - Cybersecurity Engineer</div>
+            <div>Specialization: Penetration Testing & Network Defense</div>
           </div>
           <div class="terminal-line">
             <span class="prompt">wendy@cybersec:~$</span>
-            <span class="command">nmap -sS localhost</span>
+            <span class="command">cat ~/.skills</span>
           </div>
           <div class="terminal-output">
-            <div>PORT     STATE SERVICE</div>
-            <div>22/tcp   open  ssh</div>
-            <div>80/tcp   open  http</div>
-            <div>443/tcp  open  https</div>
+            <div>Penetration Testing: ████████████ 95%</div>
+            <div>Network Security:  ██████████ 88%</div>
+            <div>Malware Analysis:  ████████ 82%</div>
+            <div>Cryptography:      ███████ 75%</div>
           </div>
           <div class="terminal-line">
             <span class="prompt">wendy@cybersec:~$</span>
-            <span class="cursor">|</span>
+            <span class="cursor">█</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Stats Section -->
-  <div class="hero-stats">
-    <div class="stat-item">
-      <div class="stat-number">50+</div>
-      <div class="stat-label">CTF Challenges</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">15+</div>
-      <div class="stat-label">Security Projects</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">3+</div>
-      <div class="stat-label">Years Experience</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">25+</div>
-      <div class="stat-label">Vulnerabilities Found</div>
-    </div>
-  </div>
-</div>`,
-
-      stats: `<!-- Stats Component -->
-<div class="stats-container">
-  <div class="stat-card">
-    <div class="stat-icon">
-      <i class="bi bi-shield-check"></i>
-    </div>
-    <div class="stat-content">
-      <div class="stat-number">50+</div>
-      <div class="stat-title">CTF Challenges Solved</div>
-    </div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-icon">
-      <i class="bi bi-bug"></i>
-    </div>
-    <div class="stat-content">
-      <div class="stat-number">25+</div>
-      <div class="stat-title">Vulnerabilities Found</div>
-    </div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-icon">
-      <i class="bi bi-trophy"></i>
-    </div>
-    <div class="stat-content">
-      <div class="stat-number">10+</div>
-      <div class="stat-title">Security Certifications</div>
-    </div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-icon">
-      <i class="bi bi-people"></i>
-    </div>
-    <div class="stat-content">
-      <div class="stat-number">100+</div>
-      <div class="stat-title">Security Assessments</div>
     </div>
   </div>
 </div>`,
@@ -678,7 +616,6 @@ class ComponentLoader {
     const components = [
       { name: 'header', target: '#header-placeholder' },
       { name: 'hero', target: '#hero-placeholder' },
-      { name: 'stats', target: '#stats-placeholder' },
       { name: 'skills', target: '#skills-placeholder' },
       { name: 'projects', target: '#projects-placeholder' },
       { name: 'experience', target: '#experience-placeholder' },

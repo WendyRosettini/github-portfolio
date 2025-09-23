@@ -12,10 +12,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .profile-photo {
     width: 250px;
     height: 250px;
@@ -173,10 +169,6 @@
     grid-template-columns: 1fr;
   }
 
-  .stats-container {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .hex-icon {
     font-size: 1.2rem;
   }
@@ -252,10 +244,6 @@
     margin: 1rem 0;
   }
 
-  .stats-container {
-    grid-template-columns: 1fr;
-  }
-
   .hexagon-grid {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -316,12 +304,6 @@
     grid-column: 1 !important;
     grid-row: 3 !important;
     margin-top: 1rem;
-  }
-
-  .hero-stats {
-    grid-column: 1 !important;
-    grid-row: 4 !important;
-    margin-top: 2rem;
   }
 
   .hero h1 {
