@@ -15,9 +15,9 @@
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Allinea tutto a sinistra per default */
   align-items: center;
-  gap: 3rem; /* Aggiungo spazio tra logo e nav */
+  gap: 30rem; /* Aumentato ancora: da 20rem a 30rem */
 }
 
 .logo {
@@ -29,7 +29,8 @@
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.2rem;
   font-weight: 700;
-  margin-right: auto; /* Spinge il logo tutto a sinistra */
+  margin-right: 8rem; /* Aumentato: da 6rem a 8rem */
+  flex-shrink: 0; /* Impedisce al logo di comprimersi */
 }
 
 .logo::before {
@@ -40,6 +41,7 @@
 .nav {
   display: flex;
   gap: 2rem;
+  margin-left: auto; /* Spinge la navigazione a destra */
 }
 
 .nav-link {

@@ -512,35 +512,19 @@ class ComponentLoader {
     </div>
   </div>
 
-  <!-- Terminal-style contact form -->
-  <div class="terminal-contact" style="margin-top: 3rem;">
-    <div class="terminal-header">
-      <span>wendy@portfolio:~$ contact_form --interactive</span>
-    </div>
-    <div class="terminal-body">
-      <form class="contact-form" id="contactForm">
-        <div class="terminal-line">
-          <span class="prompt">Name:</span>
-          <input type="text" name="name" placeholder="Enter your name..." class="terminal-input">
-        </div>
-        <div class="terminal-line">
-          <span class="prompt">Email:</span>
-          <input type="email" name="email" placeholder="your.email@domain.com" class="terminal-input">
-        </div>
-        <div class="terminal-line">
-          <span class="prompt">Subject:</span>
-          <input type="text" name="subject" placeholder="Collaboration opportunity..." class="terminal-input">
-        </div>
-        <div class="terminal-line">
-          <span class="prompt">Message:</span>
-          <textarea name="message" placeholder="Your message here..." class="terminal-input terminal-textarea"></textarea>
-        </div>
-        <div class="terminal-line">
-          <button type="submit" class="terminal-button">
-            <i class="bi bi-send"></i> Send Message
-          </button>
-        </div>
-      </form>
+  <!-- Additional contact note -->
+  <div style="margin-top: 3rem; text-align: center;">
+    <div style="background: rgba(0, 255, 136, 0.1); border: 1px solid var(--primary-color); border-radius: 8px; padding: 1.5rem;">
+      <h3 style="color: var(--primary-color); margin-bottom: 1rem;">
+        <i class="bi bi-terminal"></i> Ready to Connect
+      </h3>
+      <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+        Interested in cybersecurity collaboration or have questions about my projects?<br>
+        Feel free to reach out through any of the contact methods above.
+      </p>
+      <p style="color: var(--accent-color); font-family: var(--font-mono); font-size: 0.9rem;">
+        $ echo "Let's build secure digital solutions together!"
+      </p>
     </div>
   </div>
 </div>`
