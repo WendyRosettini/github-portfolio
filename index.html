@@ -18,25 +18,73 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+  <!-- Loading Animation -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="terminal-loader">
+      <div class="loader-text">$ initializing portfolio...</div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Background Animation -->
   <div class="bg-animation"></div>
 
-  <!-- Header -->
-  <header class="terminal-header">
-    <div class="header-container">
-      <a href="#" class="logo">wendy.rosettini</a>
-      <nav class="nav" id="nav">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-      <button class="mobile-menu-toggle" onclick="toggleMenu()">
-        <i class="bi bi-list"></i>
-      </button>
-    </div>
+  <!-- Header - Loaded Dynamically -->
+  <header class="terminal-header" id="header-placeholder">
+    <!-- Header component will be loaded here -->
   </header>
+
+  <!-- Hero Section - Loaded Dynamically -->
+  <section class="hero" id="hero-placeholder">
+    <!-- Hero component will be loaded here -->
+  </section>
+
+  <!-- Stats Section - Loaded Dynamically -->
+  <section class="stats-section" id="stats-placeholder">
+    <!-- Stats component will be loaded here -->
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <div id="skills-placeholder">
+      <!-- Skills component will be loaded here -->
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div id="projects-placeholder">
+      <!-- Projects component will be loaded here -->
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section" id="experience">
+    <div id="experience-placeholder">
+      <!-- Experience component will be loaded here -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div id="contact-placeholder">
+      <!-- Contact component will be loaded here -->
+    </div>
+  </section>
+
+  <!-- Footer - Loaded Dynamically -->
+  <footer class="footer" id="footer-placeholder">
+    <!-- Footer component will be loaded here -->
+  </footer>
+
+  <!-- Component Loader -->
+  <script src="assets/js/component-loader.js"></script>
+  <!-- Combined JavaScript for better compatibility -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
