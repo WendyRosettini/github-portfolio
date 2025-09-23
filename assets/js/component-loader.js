@@ -78,18 +78,27 @@ class ComponentLoader {
             <span class="command">whoami</span>
           </div>
           <div class="terminal-output">
-            <div>Wendy Rosettini - Cybersecurity Engineer</div>
-            <div>Specialization: Penetration Testing & Network Defense</div>
+            <div>👤 <strong>Wendy Rosettini</strong> - Cybersecurity Engineer</div>
+            <div>🎯 Specialization: Penetration Testing & Network Defense</div>
+            <div>🎓 MSc Cybersecurity @ Sapienza University</div>
           </div>
           <div class="terminal-line">
             <span class="prompt">wendy@cybersec:~$</span>
             <span class="command">cat ~/.skills</span>
           </div>
           <div class="terminal-output">
-            <div>Penetration Testing: ████████████ 95%</div>
-            <div>Network Security:  ██████████ 88%</div>
-            <div>Malware Analysis:  ████████ 82%</div>
-            <div>Cryptography:      ███████ 75%</div>
+            <div>🔍 Penetration Testing: <span class="skill-bar"><span class="skill-fill" style="width: 95%">████████████</span></span> 95%</div>
+            <div>🌐 Network Security:   <span class="skill-bar"><span class="skill-fill" style="width: 88%">██████████</span></span> 88%</div>
+            <div>🦠 Malware Analysis:   <span class="skill-bar"><span class="skill-fill" style="width: 82%">████████</span></span> 82%</div>
+            <div>🔐 Cryptography:       <span class="skill-bar"><span class="skill-fill" style="width: 75%">███████</span></span> 75%</div>
+            <div>🐍 Python Scripting:   <span class="skill-bar"><span class="skill-fill" style="width: 90%">██████████</span></span> 90%</div>
+          </div>
+          <div class="terminal-line">
+            <span class="prompt">wendy@cybersec:~$</span>
+            <span class="command">echo "Type 'help' for available commands"</span>
+          </div>
+          <div class="terminal-output">
+            <div>💡 Type 'help' for available commands</div>
           </div>
           <div class="terminal-line">
             <span class="prompt">wendy@cybersec:~$</span>

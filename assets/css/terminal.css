@@ -128,6 +128,10 @@
   text-shadow: 0 0 8px rgba(0, 255, 136, 0.8);
   flex-shrink: 0;
   position: relative;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .prompt::before {
@@ -161,6 +165,8 @@
   margin-bottom: 0.25rem;
   padding-left: 0.5rem;
   position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
 }
 
 .terminal-output div::before {
@@ -169,6 +175,73 @@
   left: -0.25rem;
   color: var(--primary-color);
   font-size: 0.8rem;
+}
+
+/* Enhanced skill bars for terminal */
+.skill-bar {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 3px;
+  width: 120px;
+  height: 12px;
+  margin: 0 0.5rem;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.skill-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+  font-size: 0;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+  animation: skillGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes skillGlow {
+  from { box-shadow: 0 0 5px rgba(0, 255, 136, 0.4); }
+  to { box-shadow: 0 0 12px rgba(0, 255, 136, 0.8); }
+}
+
+/* Enhanced terminal output styling */
+.terminal-output div {
+  margin-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  animation: fadeInText 0.8s ease-out;
+}
+
+.terminal-output strong {
+  color: var(--primary-color);
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+  font-weight: 700;
+}
+
+/* Terminal lines with icons get special styling */
+.terminal-output div:first-child {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(0, 255, 136, 0.05);
+  border-left: 2px solid var(--primary-color);
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .cursor {
