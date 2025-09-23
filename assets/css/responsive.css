@@ -1,0 +1,291 @@
+/* Tablet specific adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-content {
+    gap: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-photo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (max-width: 768px) {
+  /* Larger touch targets */
+  .nav-link {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .terminal-button {
+    min-height: 44px;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .btn {
+    min-height: 48px;
+  }
+
+  .social-link {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .contact-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+
+  /* Improve scrolling and spacing */
+  .skill-card, .project-card {
+    margin-bottom: 1rem;
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+  }
+
+  /* Better text readability */
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(26, 31, 69, 0.98);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    text-align: center;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Riordina gli elementi per mobile con flexbox */
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-photo {
+    order: 2;
+    margin: 1rem 0;
+  }
+
+  .hero-skills {
+    order: 3;
+  }
+
+  .hero-terminal {
+    order: 4;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .profile-photo {
+    width: min(200px, 80vw);
+    height: min(200px, 80vw);
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Assicura che la foto sia centrata perfettamente */
+  .hero-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+
+  .security-visual {
+    height: 250px;
+  }
+
+  .hexagon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    padding-left: 60px;
+  }
+
+  .timeline-item::before {
+    left: 30px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    grid-column: 1;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hex-icon {
+    font-size: 1.2rem;
+  }
+
+  .hex-label {
+    font-size: 0.7rem;
+  }
+
+  .terminal-container {
+    max-width: 100%;
+    margin: 1rem;
+  }
+
+  .terminal-body {
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    min-height: 320px;
+  }
+
+  /* Contact section improvements */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-container {
+    padding: 2rem 1rem;
+  }
+
+  /* Hero section adjustments */
+  .hero {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  /* Section padding */
+  .section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Hero section più compatta su mobile piccolo */
+  .hero {
+    padding: 4rem 1rem 2rem;
+    min-height: auto;
+  }
+
+  .hero-content {
+    gap: 1.5rem;
+  }
+
+  .hero-photo {
+    margin: 1rem 0;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hexagon-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .hex-item {
+    padding: 1rem;
+  }
+
+  .terminal-body {
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
+
+  .terminal-button {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .project-header {
+    padding: 1rem;
+  }
+
+  .project-body {
+    padding: 1rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

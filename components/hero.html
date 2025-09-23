@@ -1,0 +1,108 @@
+<!-- Hero Section Component -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <!-- Top Left: Main Text -->
+    <div class="hero-text">
+      <div class="terminal-text">$ whoami</div>
+      <h1>Wendy Rosettini</h1>
+      <p class="hero-subtitle">Cybersecurity Engineer & Penetration Tester</p>
+      <p class="hero-description">
+        MSc student at Sapienza University specializing in offensive security, malware analysis, and network defense. 
+        Passionate about finding vulnerabilities before the bad guys do.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://github.com/wendytrilly00w" target="_blank" class="btn btn-primary">
+          <i class="bi bi-github"></i> View GitHub
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="bi bi-envelope"></i> Contact Me
+        </a>
+      </div>
+    </div>
+    
+    <!-- Top Right: Photo -->
+    <div class="hero-photo">
+      <img src="assets/images/photo_badge_1.jpg" alt="Wendy Rosettini" class="profile-photo">
+    </div>
+
+    <!-- Bottom Left: Skills -->
+    <div class="hero-skills">
+      <div class="hexagon-grid">
+        <div class="hex-item">
+          <i class="bi bi-shield-lock hex-icon"></i>
+          <span class="hex-label">Penetration Testing</span>
+        </div>
+        <div class="hex-item">
+          <i class="bi bi-bug hex-icon"></i>
+          <span class="hex-label">Malware Analysis</span>
+        </div>
+        <div class="hex-item">
+          <i class="bi bi-terminal hex-icon"></i>
+          <span class="hex-label">Ethical Hacking</span>
+        </div>
+        <div class="hex-item">
+          <i class="bi bi-hdd-network hex-icon"></i>
+          <span class="hex-label">Network Security</span>
+        </div>
+        <div class="hex-item">
+          <i class="bi bi-code-slash hex-icon"></i>
+          <span class="hex-label">Secure Coding</span>
+        </div>
+        <div class="hex-item">
+          <i class="bi bi-lock hex-icon"></i>
+          <span class="hex-label">Cryptography</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Right: Terminal -->
+    <div class="hero-terminal">
+      <div class="terminal-container">
+        <div class="terminal-header-bar">
+          <div class="terminal-dots">
+            <div class="terminal-dot dot-red"></div>
+            <div class="terminal-dot dot-yellow"></div>
+            <div class="terminal-dot dot-green"></div>
+          </div>
+          <div class="terminal-title">wendy@cybersec:~$</div>
+        </div>
+        <div class="terminal-body" id="terminal">
+          <div class="terminal-line" style="animation-delay: 0.5s;">
+            <span class="terminal-prompt">wendy@cybersec:~$</span> 
+            <span class="terminal-command">whoami</span>
+          </div>
+          <div class="terminal-line" style="animation-delay: 1s;">
+            <span class="terminal-output">wendy</span>
+          </div>
+          <div class="terminal-line" style="animation-delay: 1.5s;">
+            <span class="terminal-prompt">wendy@cybersec:~$</span> 
+            <span class="terminal-command">ls projects/</span>
+          </div>
+          <div class="terminal-line" style="animation-delay: 2s;">
+            <span class="terminal-output">automotive_hsm/  pentest_lab/  network_defense/  ctf_platform/</span>
+          </div>
+          <div class="terminal-line" style="animation-delay: 2.5s;">
+            <span class="terminal-prompt">wendy@cybersec:~$</span> 
+            <span class="terminal-command">cat skills.txt</span>
+          </div>
+          <div class="terminal-line" style="animation-delay: 3s;">
+            <span class="terminal-output">Penetration Testing | Malware Analysis | Network Security</span>
+          </div>
+          <div class="terminal-line" style="animation-delay: 3.5s;">
+            <span class="terminal-prompt">wendy@cybersec:~$</span>
+            <span class="terminal-cursor"></span>
+          </div>
+          
+          <div class="terminal-interactive">
+            <button class="terminal-button" onclick="terminal.runCommand('help')">help</button>
+            <button class="terminal-button" onclick="terminal.runCommand('about')">about</button>
+            <button class="terminal-button" onclick="terminal.runCommand('projects')">projects</button>
+            <button class="terminal-button" onclick="terminal.runCommand('skills')">skills</button>
+            <button class="terminal-button" onclick="terminal.runCommand('hack')">hack</button>
+            <button class="terminal-button" onclick="terminal.runCommand('clear')">clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
