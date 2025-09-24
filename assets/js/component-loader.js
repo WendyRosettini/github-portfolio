@@ -35,10 +35,10 @@ class ComponentLoader {
   <div class="hero-text">
     <div class="terminal-text">$ whoami</div>
     <h1>Wendy Rosettini</h1>
-    <p class="hero-subtitle">Cybersecurity Engineer & Penetration Tester</p>
+    <p class="hero-subtitle">Cybersecurity Specialist & Penetration Tester</p>
     <p class="hero-description">
-      MSc student at Sapienza University specializing in offensive security, malware analysis, and network defense. 
-      Passionate about ethical hacking and securing digital infrastructures.
+      Laureata in Ingegneria Informatica presso l'Università dell'Aquila. Attualmente specializzanda in Cybersecurity presso La Sapienza di Roma. 
+      Esperienza di 6 mesi come tirocinante Red Team presso Leonardo S.p.A., con focus su AI-driven penetration testing.
     </p>
     <div class="hero-buttons">
       <a href="#contact" class="btn-primary">
@@ -278,119 +278,113 @@ class ComponentLoader {
 
       projects: `<!-- Projects Section Component -->
 <div class="section-header reveal">
-  <h2 class="section-title">Security Projects</h2>
-  <p class="section-subtitle">Real-world cybersecurity implementations and research</p>
+  <h2 class="section-title">Progetti di Sicurezza</h2>
+  <p class="section-subtitle">Implementazioni reali e ricerca in cybersecurity</p>
 </div>
 
 <div class="projects-grid reveal">
   <div class="project-card">
     <div class="project-header">
-      <h3>Network Vulnerability Scanner</h3>
+      <h3>AI-Driven Penetration Testing Framework</h3>
       <div class="project-tags">
         <span class="tag">Python</span>
-        <span class="tag">Nmap</span>
-        <span class="tag">Network Security</span>
+        <span class="tag">LLM</span>
+        <span class="tag">MCP</span>
+        <span class="tag">Multi-Agent</span>
       </div>
     </div>
     <p class="project-description">
-      Advanced network vulnerability assessment tool with automated reporting and CVSS scoring. 
-      Implements custom scanning modules for enterprise network analysis.
+      Framework modulare che automatizza il penetration testing tramite agenti LLM e Model Context Protocol. 
+      Integra strumenti Kali Linux con orchestrazione intelligente e controllo human-in-the-loop.
     </p>
     <div class="project-features">
-      <span class="feature">• Automated vulnerability detection</span>
-      <span class="feature">• Custom CVE database integration</span>
-      <span class="feature">• Detailed security reports</span>
+      <span class="feature">• Orchestrazione multi-agente AI</span>
+      <span class="feature">• Integrazione Nmap, SQLMap, Nikto</span>
+      <span class="feature">• Post-exploitation automatizzata</span>
     </div>
     <div class="project-links">
-      <a href="#" class="project-link">
-        <i class="bi bi-github"></i> View Code
-      </a>
-      <a href="#" class="project-link">
-        <i class="bi bi-eye"></i> Live Demo
+      <a href="https://drive.google.com/file/d/1oZJRywM75ihs5xgnwREWP5k1kdHpqao6/view" target="_blank" class="project-link">
+        <i class="bi bi-file-earmark-pdf"></i> Tesi
       </a>
     </div>
   </div>
 
   <div class="project-card">
     <div class="project-header">
-      <h3>Malware Analysis Toolkit</h3>
+      <h3>Sicurezza Veicolare - Crittografia HSM</h3>
       <div class="project-tags">
-        <span class="tag">C++</span>
-        <span class="tag">Reverse Engineering</span>
-        <span class="tag">Static Analysis</span>
-      </div>
-    </div>
-    <p class="project-description">
-      Comprehensive malware analysis framework for static and dynamic analysis. 
-      Features sandbox environment and behavioral analysis capabilities.
-    </p>
-    <div class="project-features">
-      <span class="feature">• Static code analysis</span>
-      <span class="feature">• Dynamic behavior monitoring</span>
-      <span class="feature">• Threat intelligence integration</span>
-    </div>
-    <div class="project-links">
-      <a href="#" class="project-link">
-        <i class="bi bi-github"></i> View Code
-      </a>
-      <a href="#" class="project-link">
-        <i class="bi bi-file-text"></i> Documentation
-      </a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <h3>Automotive Security Research</h3>
-      <div class="project-tags">
+        <span class="tag">ESP32</span>
+        <span class="tag">AES</span>
+        <span class="tag">ECTAKS</span>
         <span class="tag">CAN Bus</span>
-        <span class="tag">Hardware Security</span>
-        <span class="tag">Cryptography</span>
       </div>
     </div>
     <p class="project-description">
-      Bachelor's thesis project on automotive cybersecurity focusing on CAN bus protocols 
-      and Hardware Security Module (HSM) implementation for vehicle networks.
+      Tesi triennale sulla sicurezza automobilistica con focus su Hardware Security Modules. 
+      Sperimentazione di protocolli crittografici AES e ECTAKS su microcontrollori ESP32.
     </p>
     <div class="project-features">
-      <span class="feature">• CAN bus security analysis</span>
-      <span class="feature">• HSM integration research</span>
-      <span class="feature">• Cryptographic protocols</span>
+      <span class="feature">• Analisi vulnerabilità CAN bus</span>
+      <span class="feature">• Implementazione HSM/TPM</span>
+      <span class="feature">• Crittografia curve ellittiche</span>
     </div>
     <div class="project-links">
-      <a href="#" class="project-link">
-        <i class="bi bi-file-earmark-pdf"></i> Research Paper
-      </a>
-      <a href="#" class="project-link">
-        <i class="bi bi-presentation"></i> Presentation
+      <a href="https://drive.google.com/file/d/1oZJRywM75ihs5xgnwREWP5k1kdHpqao6/view" target="_blank" class="project-link">
+        <i class="bi bi-file-earmark-pdf"></i> Tesi Completa
       </a>
     </div>
   </div>
 
   <div class="project-card">
     <div class="project-header">
-      <h3>Web Application Penetration Testing Framework</h3>
+      <h3>Macchina Virtuale Penetration Testing</h3>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Web Security</span>
-        <span class="tag">OWASP</span>
+        <span class="tag">SQL Injection</span>
+        <span class="tag">Privilege Escalation</span>
+        <span class="tag">File Upload</span>
       </div>
     </div>
     <p class="project-description">
-      Automated web application security testing tool following OWASP Top 10 methodology. 
-      Includes custom payload generation and vulnerability chaining detection.
+      VM dedicata al penetration testing con 6 livelli di difficoltà (3 per accesso locale, 3 per privilege escalation). 
+      Vulnerabilità realistiche: SQL injection, cookie hijacking, file upload insicuri.
     </p>
     <div class="project-features">
-      <span class="feature">• OWASP Top 10 coverage</span>
-      <span class="feature">• Custom payload library</span>
-      <span class="feature">• Automated reporting</span>
+      <span class="feature">• 6 livelli di sfida progressivi</span>
+      <span class="feature">• Vulnerabilità OWASP Top 10</span>
+      <span class="feature">• Scenari realistici di pentesting</span>
     </div>
     <div class="project-links">
-      <a href="#" class="project-link">
-        <i class="bi bi-github"></i> View Code
+      <a href="https://drive.google.com/file/d/1IUo7KfHntAANG9wObcx0sIHjdGM0Lb32/view" target="_blank" class="project-link">
+        <i class="bi bi-download"></i> VM Download
       </a>
-      <a href="#" class="project-link">
-        <i class="bi bi-play-circle"></i> Demo Video
+      <a href="https://drive.google.com/file/d/1T5A-cu5uWGLb_VUzgbMPETPmF-R5ZNY9/view" target="_blank" class="project-link">
+        <i class="bi bi-file-text"></i> Guida
+      </a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <h3>FoodRescue - Sviluppo Web</h3>
+      <div class="project-tags">
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">PHP</span>
+        <span class="tag">Frontend/Backend</span>
+      </div>
+    </div>
+    <p class="project-description">
+      Piattaforma web collaborativa per la riduzione degli sprechi alimentari. 
+      Responsabile del design e programmazione frontend/backend con focus su UX e security.
+    </p>
+    <div class="project-features">
+      <span class="feature">• Design responsive e accessibile</span>
+      <span class="feature">• Backend PHP sicuro</span>
+      <span class="feature">• Gestione database MySQL</span>
+    </div>
+    <div class="project-links">
+      <a href="https://foodrescue.altervista.org/foodrescue/" target="_blank" class="project-link">
+        <i class="bi bi-globe"></i> Sito Live
       </a>
     </div>
   </div>
@@ -398,17 +392,17 @@ class ComponentLoader {
 
       experience: `<!-- Experience Section Component -->
 <div class="section-header reveal">
-  <h2 class="section-title">Professional Journey</h2>
-  <p class="section-subtitle">Academic and professional milestones in cybersecurity</p>
+  <h2 class="section-title">Percorso Professionale</h2>
+  <p class="section-subtitle">Esperienza accademica e professionale in cybersecurity</p>
 </div>
 
 <div class="timeline reveal">
   <div class="timeline-item">
     <div class="timeline-content">
-      <div class="timeline-date">2024 - Present</div>
-      <h3>MSc Cybersecurity Engineering</h3>
-      <p>Sapienza University of Rome</p>
-      <p>Advanced studies in offensive security, malware analysis, and network defense strategies. Research focus on AI-driven threat detection and automotive security protocols.</p>
+      <div class="timeline-date">Attuale</div>
+      <h3>MSc Cybersecurity</h3>
+      <p>Università La Sapienza - Roma</p>
+      <p>Specializzazione in cybersecurity con focus su penetration testing, malware analysis e difesa delle reti. Ricerca su tecniche di AI-driven security testing.</p>
     </div>
     <div></div>
   </div>
@@ -416,39 +410,19 @@ class ComponentLoader {
   <div class="timeline-item">
     <div></div>
     <div class="timeline-content">
-      <div class="timeline-date">2023 - 2024</div>
-      <h3>Junior Penetration Tester</h3>
-      <p>Freelance Security Consultant</p>
-      <p>Conducted security assessments for small to medium enterprises. Specialized in web application testing, network infrastructure analysis, and security awareness training.</p>
+      <div class="timeline-date">Mar 2025 - Set 2025</div>
+      <h3>Tirocinante Red Team</h3>
+      <p>Leonardo S.p.A.</p>
+      <p>Tirocinio di 6 mesi focalizzato su penetration testing automatizzato con AI. Sviluppo di framework basato su LLM per testing multi-dominio (reti, web app, IoT). Partecipazione a CTF (Global HTB, Red Hot Cyber).</p>
     </div>
   </div>
   
   <div class="timeline-item">
-    <div class="timeline-content">
-      <div class="timeline-date">2023</div>
-      <h3>Bachelor's Degree Thesis</h3>
-      <p>Automotive Security and Cryptography</p>
-      <p>Research on Hardware Security Modules (HSM) implementation for vehicle security systems. Analyzed CAN bus vulnerabilities and proposed cryptographic solutions for automotive networks.</p>
-    </div>
-    <div></div>
-  </div>
-  
-  <div class="timeline-item">
-    <div></div>
     <div class="timeline-content">
       <div class="timeline-date">2020 - 2023</div>
-      <h3>BSc Computer Engineering</h3>
+      <h3>Laurea Triennale in Ingegneria Informatica</h3>
       <p>Università degli Studi dell'Aquila</p>
-      <p>Comprehensive foundation in computer systems with focus on: System Security, Cryptography, Network Protocols, Software Engineering, and Digital Signal Processing.</p>
-    </div>
-  </div>
-  
-  <div class="timeline-item">
-    <div class="timeline-content">
-      <div class="timeline-date">2022 - Present</div>
-      <h3>CTF Competitions & Security Research</h3>
-      <p>Active Participant & Team Member</p>
-      <p>Regular participation in Capture The Flag competitions including HackTheBox, TryHackMe, and international CTF events. Active contributor to cybersecurity research and vulnerability disclosure.</p>
+      <p>Tesi: "Sicurezza in ambito veicolare: studio, sviluppo e sperimentazione di schemi crittografici basati su HSM". Sperimentazione di protocolli AES e ECTAKS su microcontrollori ESP32.</p>
     </div>
     <div></div>
   </div>
@@ -456,11 +430,21 @@ class ComponentLoader {
   <div class="timeline-item">
     <div></div>
     <div class="timeline-content">
-      <div class="timeline-date">2021 - 2023</div>
-      <h3>Cybersecurity Internship</h3>
-      <p>Regional IT Department</p>
-      <p>Gained hands-on experience in network security monitoring, incident response procedures, and security policy implementation. Assisted in vulnerability assessments and security audits.</p>
+      <div class="timeline-date">2024</div>
+      <h3>Progetti di Sicurezza</h3>
+      <p>Sviluppo Personale</p>
+      <p>Creazione di macchina virtuale per penetration testing con 3 livelli di privilege escalation. Configurazione firewall OPNsense e implementazione SIEM/IDS in ambiente Proxmox.</p>
     </div>
+  </div>
+  
+  <div class="timeline-item">
+    <div class="timeline-content">
+      <div class="timeline-date">2021 - 2022</div>
+      <h3>Sviluppo Web</h3>
+      <p>Progetto Collaborativo</p>
+      <p>Sviluppo di sito web FoodRescue con focus su frontend/backend. Utilizzo di HTML, CSS, JavaScript e PHP per piattaforma di riduzione sprechi alimentari.</p>
+    </div>
+    <div></div>
   </div>
 </div>`,
 
@@ -483,6 +467,15 @@ class ComponentLoader {
       </div>
       <a href="mailto:wendy.rosettini@gmail.com" class="contact-link">
         wendy.rosettini@gmail.com
+      </a>
+    </div>
+    
+    <div class="contact-item">
+      <div class="contact-icon">
+        <i class="bi bi-telephone"></i>
+      </div>
+      <a href="tel:+393279994218" class="contact-link">
+        (+39) 327 999 4218
       </a>
     </div>
     
