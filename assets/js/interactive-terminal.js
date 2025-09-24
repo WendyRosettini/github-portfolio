@@ -15,7 +15,7 @@ class InteractiveTerminal {
       
       'cv': '🎓 Timeline Educazione & Esperienza:\n\nAttuale      │ MSc Cybersecurity - La Sapienza Roma\n             │ Specializzazione: Offensive Security & AI-driven Testing\n             │ Tesi: Framework AI per Penetration Testing automatizzato\n\nMar-Set 2025 │ Tirocinante Red Team - Leonardo S.p.A.\n             │ Sviluppo framework LLM per pentesting automatizzato\n             │ Partecipazione CTF (Global HTB, Red Hot Cyber)\n             │ Testing WAPT, DAST/SAST, privilege escalation\n\n2020-2023    │ BSc Ingegneria Informatica - Univ. L\'Aquila\n             │ Tesi: Sicurezza veicolare con crittografia HSM\n             │ Sperimentazione AES/ECTAKS su ESP32\n\n2024         │ Progetti Personali - Cybersecurity\n             │ VM penetration testing, configurazione firewall\n             │ Implementazione SIEM/IDS su Proxmox',
       
-      'contact': '📧 Informazioni di Contatto:\n\n• Email: wendy.rosettini@gmail.com\n• Telefono: (+39) 327 999 4218\n• LinkedIn: /in/wendy-rosettini-9130a3289/\n• GitHub: github.com/wendytrilly00w\n• Indirizzo: Via Luigi Sturzo, 67100 L\'Aquila\n\n💼 Aperta a opportunità in cybersecurity!\n\nDigita "social" per aprire i link direttamente',
+      'contact': '📧 Informazioni di Contatto:\n\n• Email: wendy.rosettini@gmail.com\n• Telefono: (+39) 327 999 4218\n• LinkedIn: /in/wendy-rosettini-9130a3289/\n• GitHub: github.com/WendyRosettini\n• Indirizzo: Via Luigi Sturzo, 67100 L\'Aquila\n\n💼 Aperta a opportunità in cybersecurity!\n\nDigita "social" per aprire i link direttamente',
       
       'social': 'OPEN_SOCIAL_LINKS',
       
@@ -212,8 +212,8 @@ class InteractiveTerminal {
         </a>
       </div>
       <div style="margin: 1rem 0;">
-        <a href="https://github.com/wendytrilly00w" target="_blank" style="color: var(--primary-color); text-decoration: none;">
-          🐙 GitHub Profile → Opening...
+        <a href="https://github.com/WendyRosettini?tab=repositories" target="_blank" style="color: var(--primary-color); text-decoration: none;">
+          🐙 GitHub Repositories → Opening...
         </a>
       </div>
       <div>✅ Links opened in new tabs</div>
@@ -222,7 +222,7 @@ class InteractiveTerminal {
     // Actually open the links
     setTimeout(() => {
       window.open('https://linkedin.com/in/wendy-rosettini-9130a3289/', '_blank');
-      window.open('https://github.com/wendytrilly00w', '_blank');
+      window.open('https://github.com/WendyRosettini?tab=repositories', '_blank');
     }, 1000);
 
     this.scrollToBottom();
@@ -235,10 +235,10 @@ class InteractiveTerminal {
     const inputLine = terminalBody.querySelector('.input-line');
     terminalBody.insertBefore(outputDiv, inputLine);
 
-    this.typewriterEffect('🐙 GitHub Repository Browser:\n\n📁 Featured Repositories:\n• network-vuln-scanner - Python vulnerability scanner\n• malware-toolkit - C++ malware analysis framework\n• automotive-security - Vehicle security research\n• webapp-pentest - Web application testing suite\n• ctf-writeups - Capture The Flag solutions\n• security-scripts - Automation scripts collection\n\n🔗 Opening GitHub profile...', outputDiv);
+    this.typewriterEffect('🐙 GitHub Repository Browser:\n\n📁 Repository Portfolio:\n• github-portfolio - Portfolio cybersecurity interattivo\n• AI-driven-penetration-testing - Framework LLM per pentesting\n• automotive-security-hsm - Ricerca sicurezza veicolare\n• penetration-vm - Macchina virtuale per testing\n• foodrescue-platform - Piattaforma web collaborativa\n• security-tools - Strumenti e script di sicurezza\n\n🔗 Opening GitHub repositories...', outputDiv);
 
     setTimeout(() => {
-      window.open('https://github.com/wendytrilly00w', '_blank');
+      window.open('https://github.com/WendyRosettini?tab=repositories', '_blank');
     }, 2000);
   }
 

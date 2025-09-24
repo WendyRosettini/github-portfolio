@@ -112,7 +112,7 @@ class ComponentLoader {
 
       footer: `<!-- Footer Component -->
 <div class="social-links">
-  <a href="https://github.com/wendytrilly00w" target="_blank" class="social-link">
+  <a href="https://github.com/WendyRosettini?tab=repositories" target="_blank" class="social-link">
     <i class="bi bi-github"></i>
   </a>
   <a href="https://linkedin.com/in/wendy-rosettini-9130a3289/" target="_blank" class="social-link">
@@ -492,7 +492,7 @@ class ComponentLoader {
       <div class="contact-icon">
         <i class="bi bi-github"></i>
       </div>
-      <a href="https://github.com/wendytrilly00w" target="_blank" class="contact-link">
+      <a href="https://github.com/WendyRosettini?tab=repositories" target="_blank" class="contact-link">
         GitHub Projects
       </a>
     </div>
