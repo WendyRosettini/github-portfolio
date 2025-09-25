@@ -7,7 +7,7 @@ class InteractiveTerminal {
     this.commands = {
       'help': '📋 Available commands:\n• help - Show this help message\n• about - Display detailed personal info\n• skills - Show technical skills with progress\n• projects - Browse security projects interactively\n• cv - Display resume/education timeline\n• contact - Show contact information\n• social - Open social media links\n• github - Browse GitHub repositories\n• certs - List cybersecurity certifications\n• tools - Show preferred security tools\n• nmap - Simulate network scan\n• whoami - Quick personal info\n• clear - Clear terminal screen\n• theme - Change terminal color theme\n• ascii - Show ASCII art banner',
       
-      'about': '👤 Profilo Dettagliato:\n\n• Nome: Wendy Rosettini\n• Ruolo: Cybersecurity Specialist & Penetration Tester\n• Nascita: 10/09/2000, L\'Aquila, Italia\n• Educazione: MSc Cybersecurity @ La Sapienza Roma\n• Esperienza: 6 mesi Red Team @ Leonardo S.p.A.\n• Lingue: Italiano (Nativo), Inglese (C1), Tedesco (B1), Francese (B1)\n• Interessi: AI-driven Pentesting, Automotive Security, CTF\n• Status: Aperta a opportunità in cybersecurity\n• Contatto: (+39) 327 999 4218',
+      'about': '👤 Profilo Dettagliato:\n\n• Nome: Wendy Rosettini\n• Ruolo: Cybersecurity Engineer\n• Nascita: 10/09/2000, L\'Aquila, Italia\n• Educazione: MSc Cybersecurity @ La Sapienza Roma\n• Esperienza: 6 mesi Red Team @ Leonardo S.p.A.\n• Lingue: Italiano (Nativo), Inglese (C1), Tedesco (B1), Francese (B1)\n• Interessi: AI-driven Pentesting, Automotive Security, CTF\n• Status: Aperta a opportunità in cybersecurity\n• Contatto: (+39) 327 999 4218',
       
       'skills': '🛡️ Technical Skills Overview:\n\n🔍 Penetration Testing: ████████████ 95%\n🌐 Network Security:   ██████████ 88%\n🦠 Malware Analysis:   ████████ 82%\n🔐 Cryptography:       ███████ 75%\n🐍 Python Scripting:   ██████████ 90%\n🔧 Security Tools:     █████████ 85%\n☁️ Cloud Security:     ███████ 78%\n📊 Threat Intelligence: ████████ 80%\n\nType "tools" to see preferred security tools',
       
@@ -337,5 +337,5 @@ class InteractiveTerminal {
 
 // Initialize interactive terminal
 document.addEventListener('DOMContentLoaded', () => {
-  new InteractiveTerminal();
+  window.interactiveTerminal = new InteractiveTerminal();
 });

@@ -35,7 +35,7 @@ class ComponentLoader {
   <div class="hero-text">
     <div class="terminal-text">$ whoami</div>
     <h1>Wendy Rosettini</h1>
-    <p class="hero-subtitle">Cybersecurity Specialist & Penetration Tester</p>
+    <p class="hero-subtitle">Cybersecurity Engineer</p>
     <p class="hero-description">
       Laureata in Ingegneria Informatica presso l'Università dell'Aquila. Attualmente specializzanda in Cybersecurity presso La Sapienza di Roma. 
       Esperienza di 6 mesi come tirocinante Red Team presso Leonardo S.p.A., con focus su AI-driven penetration testing.
@@ -65,45 +65,65 @@ class ComponentLoader {
     <div class="terminal-window">
       <div class="terminal-header">
         <div class="terminal-controls">
-          <span class="control close"></span>
-          <span class="control minimize"></span>
-          <span class="control maximize"></span>
+          <button class="control-btn close"></button>
+          <button class="control-btn minimize"></button>
+          <button class="control-btn maximize"></button>
         </div>
-        <span class="terminal-title">wendy@cybersec:~ (Interactive Terminal)</span>
+        <h3 class="terminal-title">wendy@cybersec ~ Interactive Terminal</h3>
       </div>
-      <div class="terminal-body">
-        <div id="terminal-content">
-          <div class="terminal-line">
-            <span class="prompt">wendy@cybersec:~$</span>
-            <span class="command">whoami</span>
-          </div>
-          <div class="terminal-output">
-            <div>👤 <strong>Wendy Rosettini</strong> - Cybersecurity Engineer</div>
-            <div>🎯 Specialization: Penetration Testing & Network Defense</div>
-            <div>🎓 MSc Cybersecurity @ Sapienza University</div>
-          </div>
-          <div class="terminal-line">
-            <span class="prompt">wendy@cybersec:~$</span>
-            <span class="command">cat ~/.skills</span>
-          </div>
-          <div class="terminal-output">
-            <div>🔍 Penetration Testing: <span class="skill-bar"><span class="skill-fill" style="width: 95%">████████████</span></span> 95%</div>
-            <div>🌐 Network Security:   <span class="skill-bar"><span class="skill-fill" style="width: 88%">██████████</span></span> 88%</div>
-            <div>🦠 Malware Analysis:   <span class="skill-bar"><span class="skill-fill" style="width: 82%">████████</span></span> 82%</div>
-            <div>🔐 Cryptography:       <span class="skill-bar"><span class="skill-fill" style="width: 75%">███████</span></span> 75%</div>
-            <div>🐍 Python Scripting:   <span class="skill-bar"><span class="skill-fill" style="width: 90%">██████████</span></span> 90%</div>
-          </div>
-          <div class="terminal-line">
-            <span class="prompt">wendy@cybersec:~$</span>
-            <span class="command">echo "Type 'help' for available commands"</span>
-          </div>
-          <div class="terminal-output">
-            <div>💡 Type 'help' for available commands</div>
-          </div>
-          <div class="terminal-line">
-            <span class="prompt">wendy@cybersec:~$</span>
-            <span class="cursor">█</span>
-          </div>
+      <div id="terminal-content" class="terminal-body">
+        <div class="terminal-line">
+          <span class="prompt">wendy@cybersec:~$</span>
+          <span class="command">whoami</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-output">👤 Wendy Rosettini - Cybersecurity Specialist
+🎯 Red Team @ Leonardo S.p.A. | MSc @ La Sapienza Roma
+📍 L'Aquila, Italy | Ready for cybersecurity challenges</span>
+        </div>
+        
+        <div class="terminal-line">
+          <span class="prompt">wendy@cybersec:~$</span>
+          <span class="command">cat skills.txt</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-output">🔍 AI-driven Penetration Testing ████████████ 95%
+🚗 Automotive Security Research  ██████████   88%
+🦠 Malware Analysis & Forensics  ████████     82%
+🔐 Cryptography & HSM           ███████      75%
+🐍 Python & Security Scripting  ██████████   90%</span>
+        </div>
+        
+        <div class="terminal-line">
+          <span class="prompt">wendy@cybersec:~$</span>
+          <span class="command">help</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-output terminal-success">💡 Interactive commands available:
+   about | cv | projects | skills | contact | social | github
+   
+🎮 Click commands below or type them:</span>
+        </div>
+        
+        <div class="terminal-line">
+          <span class="terminal-output">
+            <div class="terminal-commands">
+              <button class="terminal-cmd-btn" onclick="executeTerminalCommand('about', this)">about</button>
+              <button class="terminal-cmd-btn" onclick="executeTerminalCommand('cv', this)">cv</button>
+              <button class="terminal-cmd-btn" onclick="executeTerminalCommand('projects', this)">projects</button>
+              <button class="terminal-cmd-btn" onclick="executeTerminalCommand('skills', this)">skills</button>
+              <button class="terminal-cmd-btn" onclick="executeTerminalCommand('contact', this)">contact</button>
+              <button class="terminal-cmd-btn" onclick="executeTerminalCommand('social', this)">social</button>
+              <button class="terminal-cmd-btn" onclick="executeTerminalCommand('github', this)">github</button>
+              <button class="terminal-cmd-btn" onclick="executeTerminalCommand('clear', this)">clear</button>
+            </div>
+          </span>
+        </div>
+        
+        <div class="input-line">
+          <span class="prompt">wendy@cybersec:~$</span>
+          <input type="text" class="terminal-input" placeholder="Type a command..." autocomplete="off">
+          <span class="terminal-cursor"></span>
         </div>
       </div>
     </div>
@@ -303,8 +323,38 @@ class ComponentLoader {
       <span class="feature">• Post-exploitation automatizzata</span>
     </div>
     <div class="project-links">
-      <a href="https://drive.google.com/file/d/1oZJRywM75ihs5xgnwREWP5k1kdHpqao6/view" target="_blank" class="project-link">
+      <a href="https://github.com/WendyRosettini/Pentest-Runner" target="_blank" class="project-link">
+        <i class="bi bi-github"></i> GitHub
+      </a>
+      <a href="https://github.com/WendyRosettini/masters-thesis-multiagent-pentest" target="_blank" class="project-link">
         <i class="bi bi-file-earmark-pdf"></i> Tesi
+      </a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <h3>Configurazione Firewall e Sicurezza di Rete</h3>
+      <div class="project-tags">
+        <span class="tag">Firewall</span>
+        <span class="tag">VPN</span>
+        <span class="tag">SIEM</span>
+        <span class="tag">Network Security</span>
+      </div>
+    </div>
+    <p class="project-description">
+      Progetto completo di configurazione e gestione della sicurezza di rete aziendale. 
+      Implementazione di regole firewall avanzate, configurazione VPN sicure e integrazione di sistemi SIEM per il monitoraggio continuo.
+    </p>
+    <div class="project-features">
+      <span class="feature">• Configurazione regole firewall aziendali</span>
+      <span class="feature">• Setup VPN con autenticazione multi-fattore</span>
+      <span class="feature">• Integrazione e configurazione SIEM</span>
+      <span class="feature">• Monitoraggio traffico e analisi anomalie</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/WendyRosettini/Impostazione-di-Regole-di-Firewall-e-Meccanismi-di-Sicurezza-in-Rete" target="_blank" class="project-link">
+        <i class="bi bi-github"></i> GitHub
       </a>
     </div>
   </div>
@@ -641,6 +691,45 @@ class ComponentLoader {
     }
   }
 }
+
+// Terminal Command Handler Function
+window.executeTerminalCommand = function(command, buttonElement) {
+  // Add visual feedback to button
+  if (buttonElement) {
+    buttonElement.classList.add('clicked');
+    setTimeout(() => {
+      buttonElement.classList.remove('clicked');
+    }, 300);
+  }
+  
+  // Check if interactive terminal instance exists
+  if (window.interactiveTerminal) {
+    // Execute the command directly
+    window.interactiveTerminal.executeCommand(command);
+  } else {
+    // Fallback: Try to trigger via input field
+    const terminalInput = document.querySelector('.terminal-input');
+    if (terminalInput) {
+      terminalInput.value = command;
+      
+      // Create and dispatch Enter key event
+      const event = new KeyboardEvent('keydown', {
+        key: 'Enter',
+        code: 'Enter',
+        which: 13,
+        keyCode: 13,
+        bubbles: true,
+        cancelable: true
+      });
+      terminalInput.dispatchEvent(event);
+      
+      // Clear the input
+      setTimeout(() => {
+        terminalInput.value = '';
+      }, 100);
+    }
+  }
+};
 
 // Initialize component loader when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
