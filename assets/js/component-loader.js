@@ -77,7 +77,7 @@ class ComponentLoader {
           <span class="command">whoami</span>
         </div>
         <div class="terminal-line">
-          <span class="terminal-output">👤 Wendy Rosettini - Cybersecurity Specialist
+          <span class="terminal-output">👤 Wendy Rosettini - Cybersecurity Engineer
 🎯 Red Team @ Leonardo S.p.A. | MSc @ La Sapienza Roma
 📍 L'Aquila, Italy | Ready for cybersecurity challenges</span>
         </div>
@@ -154,7 +154,7 @@ class ComponentLoader {
 
       skills: `<!-- Skills Section Component -->
 <div class="section-header reveal">
-  <h2 class="section-title">Technical Arsenal</h2>
+  <h2 class="section-title">Tools</h2>
   <p class="section-subtitle">Specialized tools and technologies for cybersecurity</p>
 </div>
 
@@ -298,7 +298,7 @@ class ComponentLoader {
 
       projects: `<!-- Projects Section Component -->
 <div class="section-header reveal">
-  <h2 class="section-title">Progetti di Sicurezza</h2>
+  <h2 class="section-title">Progetti</h2>
   <p class="section-subtitle">Implementazioni reali e ricerca in cybersecurity</p>
 </div>
 
@@ -481,7 +481,7 @@ class ComponentLoader {
     <div></div>
     <div class="timeline-content">
       <div class="timeline-date">2024</div>
-      <h3>Progetti di Sicurezza</h3>
+      <h3>Progetti</h3>
       <p>Sviluppo Personale</p>
       <p>Creazione di macchina virtuale per penetration testing con 3 livelli di privilege escalation. Configurazione firewall OPNsense e implementazione SIEM/IDS in ambiente Proxmox.</p>
     </div>
