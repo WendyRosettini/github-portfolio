@@ -555,6 +555,27 @@ class ComponentLoader {
     </div>
   </div>
 
+  <!-- CV QR Code Section -->
+  <div style="margin-top: 3rem; text-align: center;">
+    <div style="background: rgba(0, 255, 136, 0.05); border: 2px solid var(--primary-color); border-radius: 12px; padding: 2rem; max-width: 400px; margin: 0 auto;">
+      <h3 style="color: var(--primary-color); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+        <i class="bi bi-file-earmark-person"></i> Download My CV
+      </h3>
+      <div style="background: white; padding: 1rem; border-radius: 8px; display: inline-block; margin-bottom: 1rem;">
+        <img src="assets/images/cv-qr-code.png" alt="CV QR Code" style="width: 200px; height: 200px; display: block;">
+      </div>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+        Scan with your phone to download my CV
+      </p>
+      <a href="https://drive.google.com/file/d/1IleH5PhOWjUyXoa8bP1TmCytd9TdMc_A/view?usp=sharing" 
+         target="_blank" 
+         class="btn-primary" 
+         style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+        <i class="bi bi-download"></i> Download CV
+      </a>
+    </div>
+  </div>
+
   <!-- Additional contact note -->
   <div style="margin-top: 3rem; text-align: center;">
     <div style="background: rgba(0, 255, 136, 0.1); border: 1px solid var(--primary-color); border-radius: 8px; padding: 1.5rem;">
