@@ -567,7 +567,7 @@ class ComponentLoader {
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
         Scan with your phone to download my CV
       </p>
-      <a href="https://drive.google.com/file/d/1IleH5PhOWjUyXoa8bP1TmCytd9TdMc_A/view?usp=sharing" 
+      <a href="CV_Wendy_Rosettini.pdf" 
          target="_blank" 
          class="btn-primary" 
          style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
