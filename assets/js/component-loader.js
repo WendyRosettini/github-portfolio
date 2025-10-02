@@ -19,6 +19,7 @@ class ComponentLoader {
   <a href="#" class="logo">wendy.rosettini</a>
   <nav class="nav" id="nav">
     <a href="#home" class="nav-link">Home</a>
+    <a href="#education" class="nav-link">Education</a>
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#projects" class="nav-link">Projects</a>
     <a href="#experience" class="nav-link">Experience</a>
@@ -152,10 +153,111 @@ class ComponentLoader {
   <i class="bi bi-shield-check"></i> Securing the digital world, one vulnerability at a time
 </p>`,
 
+      education: `<!-- Education Section Component -->
+<div class="section-header reveal">
+  <h2 class="section-title">Education</h2>
+  <p class="section-subtitle">Academic background in Computer Engineering and Cybersecurity</p>
+</div>
+
+<div class="education-grid reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 2rem;">
+  
+  <!-- Master's Degree Card -->
+  <div style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 179, 255, 0.05)); border: 2px solid var(--primary-color); border-radius: 16px; padding: 2rem; position: relative; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div style="position: absolute; top: 1rem; right: 1rem; background: var(--primary-color); color: var(--bg-primary); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
+      <i class="bi bi-clock-history"></i> In Progress
+    </div>
+    
+    <div style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;">
+      <i class="bi bi-mortarboard-fill"></i>
+    </div>
+    
+    <h3 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 0.5rem;">
+      Master's Degree in Cybersecurity
+    </h3>
+    
+    <h4 style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 0.5rem;">
+      <i class="bi bi-building"></i> Sapienza University of Rome
+    </h4>
+    
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+      <i class="bi bi-calendar-range"></i> 2022 - October 2025
+    </p>
+    
+    <div style="height: 2px; background: linear-gradient(90deg, var(--primary-color), transparent); margin-bottom: 1.5rem;"></div>
+    
+    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+      Specialization in <strong style="color: var(--primary-color);">AI-driven Penetration Testing</strong> 
+      and advanced security methodologies. Master's thesis on multi-agent LLM framework for automated penetration testing 
+      with integration of Model Context Protocol and human-in-the-loop control.
+    </p>
+    
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <span class="tag">AI Security</span>
+      <span class="tag">Penetration Testing</span>
+      <span class="tag">Multi-Agent Systems</span>
+      <span class="tag">Red Team Operations</span>
+      <span class="tag">LLM Integration</span>
+    </div>
+  </div>
+  
+  <!-- Bachelor's Degree Card -->
+  <div style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.03), rgba(0, 179, 255, 0.03)); border: 2px solid rgba(0, 255, 136, 0.3); border-radius: 16px; padding: 2rem; position: relative; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div style="position: absolute; top: 1rem; right: 1rem; background: var(--accent-success); color: var(--bg-primary); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
+      <i class="bi bi-check-circle-fill"></i> Completed
+    </div>
+    
+    <div style="font-size: 3rem; color: var(--accent-success); margin-bottom: 1rem;">
+      <i class="bi bi-mortarboard-fill"></i>
+    </div>
+    
+    <h3 style="color: var(--accent-success); font-size: 1.5rem; margin-bottom: 0.5rem;">
+      Bachelor's Degree in Computer Engineering
+    </h3>
+    
+    <h4 style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 0.5rem;">
+      <i class="bi bi-building"></i> University of L'Aquila
+    </h4>
+    
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+      <i class="bi bi-calendar-range"></i> 2019 - 2022
+    </p>
+    
+    <div style="height: 2px; background: linear-gradient(90deg, var(--accent-success), transparent); margin-bottom: 1.5rem;"></div>
+    
+    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+      Specialization in <strong style="color: var(--accent-success);">Automotive Security</strong> 
+      and embedded systems protection. Bachelor's thesis on Hardware Security Modules (HSM) and 
+      cryptographic protocols (AES, ECTAKS) for securing vehicular communications and CAN bus systems.
+    </p>
+    
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <span class="tag">Automotive Security</span>
+      <span class="tag">HSM/TPM</span>
+      <span class="tag">Cryptography</span>
+      <span class="tag">Embedded Systems</span>
+      <span class="tag">CAN Bus Security</span>
+    </div>
+  </div>
+  
+</div>
+
+<style>
+.education-grid > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+}
+
+@media (max-width: 768px) {
+  .education-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+</style>`,
+
       skills: `<!-- Skills Section Component -->
 <div class="section-header reveal">
-  <h2 class="section-title">Tools</h2>
-  <p class="section-subtitle">Specialized tools and technologies for cybersecurity</p>
+  <h2 class="section-title">Technical Skills</h2>
+  <p class="section-subtitle">Specialized competencies in cybersecurity and secure systems</p>
 </div>
 
 <div class="skills-grid reveal">
@@ -173,21 +275,27 @@ class ComponentLoader {
         </div>
       </div>
       <div class="skill-item">
-        <span class="skill-name">Network Security</span>
+        <span class="skill-name">Vulnerability Assessment</span>
         <div class="skill-bar">
-          <div class="skill-progress" style="width: 85%"></div>
+          <div class="skill-progress" style="width: 88%"></div>
         </div>
       </div>
       <div class="skill-item">
         <span class="skill-name">Malware Analysis</span>
         <div class="skill-bar">
-          <div class="skill-progress" style="width: 80%"></div>
+          <div class="skill-progress" style="width: 85%"></div>
         </div>
       </div>
       <div class="skill-item">
-        <span class="skill-name">Cryptography</span>
+        <span class="skill-name">Security Protocols</span>
         <div class="skill-bar">
-          <div class="skill-progress" style="width: 75%"></div>
+          <div class="skill-progress" style="width: 82%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Risk Management</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 80%"></div>
         </div>
       </div>
     </div>
@@ -261,35 +369,35 @@ class ComponentLoader {
     </div>
   </div>
 
-  <!-- Specialized Areas -->
+  <!-- Automotive Security -->
   <div class="skill-category">
     <h3 class="category-title">
-      <i class="bi bi-cpu"></i>
-      Specialized
+      <i class="bi bi-car-front"></i>
+      Automotive Security
     </h3>
     <div class="skills-list">
       <div class="skill-item">
-        <span class="skill-name">OSINT</span>
+        <span class="skill-name">HSM/TPM Implementation</span>
         <div class="skill-bar">
-          <div class="skill-progress" style="width: 88%"></div>
+          <div class="skill-progress" style="width: 85%"></div>
         </div>
       </div>
       <div class="skill-item">
-        <span class="skill-name">Reverse Engineering</span>
+        <span class="skill-name">CAN Bus Security</span>
         <div class="skill-bar">
-          <div class="skill-progress" style="width: 75%"></div>
+          <div class="skill-progress" style="width: 82%"></div>
         </div>
       </div>
       <div class="skill-item">
-        <span class="skill-name">Digital Forensics</span>
-        <div class="skill-bar">
-          <div class="skill-progress" style="width: 72%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <span class="skill-name">Social Engineering</span>
+        <span class="skill-name">Hardware Security Modules</span>
         <div class="skill-bar">
           <div class="skill-progress" style="width: 80%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-name">Automotive Cryptography</span>
+        <div class="skill-bar">
+          <div class="skill-progress" style="width: 78%"></div>
         </div>
       </div>
     </div>
@@ -673,6 +781,7 @@ class ComponentLoader {
     const components = [
       { name: 'header', target: '#header-placeholder' },
       { name: 'hero', target: '#hero-placeholder' },
+      { name: 'education', target: '#education-placeholder' },
       { name: 'skills', target: '#skills-placeholder' },
       { name: 'projects', target: '#projects-placeholder' },
       { name: 'experience', target: '#experience-placeholder' },
