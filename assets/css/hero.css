@@ -36,6 +36,7 @@
 }
 
 .hero-terminal {
+  display: none !important;
   animation: slideInLeft 1s ease-out 0.3s both;
   grid-column: 1;
   grid-row: 2;

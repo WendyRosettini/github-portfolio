@@ -774,8 +774,8 @@ class ComponentLoader {
   async init() {
     console.log('🔄 Initializing component loader...');
     
-    // Show loading screen
-    this.showLoading();
+    // Show loading screen - DISABLED
+    // this.showLoading();
     
     // Define components to load
     const components = [
@@ -792,8 +792,8 @@ class ComponentLoader {
     // Load all components
     await this.loadComponents(components);
     
-    // Hide loading screen after components are loaded
-    this.hideLoading();
+    // Hide loading screen after components are loaded - DISABLED
+    // this.hideLoading();
   }
 
   /**
